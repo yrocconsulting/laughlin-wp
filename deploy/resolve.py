@@ -1,7 +1,7 @@
 """Swap lx:<name> image references for media-library IDs/URLs and print slashed JSON.
 
 Usage: python3 resolve.py pages/option-a.json media-map.json > out.json
-The output is backslash-doubled because WordPress unslashes meta values on save.
+(WP-CLI slashes meta values itself, so the JSON is written as-is.)
 """
 import json, re, sys
 page, media = json.load(open(sys.argv[1])), json.load(open(sys.argv[2]))
@@ -19,4 +19,4 @@ def walk(e):
     for k in e.get("elements", []): walk(k)
 
 for e in page["data"]: walk(e)
-sys.stdout.write(json.dumps(page["data"]).replace("\\", "\\\\"))
+sys.stdout.write(json.dumps(page["data"]))

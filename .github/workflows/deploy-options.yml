@@ -80,6 +80,8 @@ jobs:
             python3 deploy/resolve.py "$f" media-map.json > data.json
             ssh site "$W post meta update $id _elementor_data" < data.json >/dev/null
             ssh site "$W post meta update $id _elementor_edit_mode builder && $W post meta update $id _elementor_template_type wp-page && $W post meta update $id _elementor_version $V && $W post meta update $id _wp_page_template elementor_canvas " >/dev/null
+            ssh site "$W eval '\$d=get_post_meta($id,\"_elementor_data\",true); echo \"stored \".strlen(\$d).\" bytes, valid json: \".(json_decode(\$d)!==null?\"yes\":\"no (\".json_last_error_msg().\")\").\", start: \".substr(\$d,0,60).PHP_EOL;'"
+            echo "sent $(wc -c < data.json) bytes"
             echo "published $slug ($id): https://$SITE_DOMAIN/$slug/"
           done
 

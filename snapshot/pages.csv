@@ -1,0 +1,12 @@
+ID,post_type,post_name,post_title,post_status
+9,elementor_library,default-kit,"Default Kit",publish
+3,page,privacy-policy,"Privacy Policy",draft
+2,page,sample-page,"Sample Page",publish
+1160,page,case-studies,"Case Studies",publish
+819,page,services,Services,publish
+796,page,contact,Contact,publish
+794,page,about-us,"About us",publish
+98,elementor_library,contact-modal-mini,"Contact modal - mini",publish
+96,elementor_library,contact-modal,"Contact modal",publish
+14,page,home,Home,publish
+10,elementor_library,liquid-kit,"Liquid Elegant Kit",publish

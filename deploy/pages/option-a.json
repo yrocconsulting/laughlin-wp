@@ -67,7 +67,7 @@
            "widgetType": "text-editor",
            "isInner": false,
            "settings": {
-            "editor": "<span class=\"eyebrow\">Helping business owners since 1971</span>",
+            "editor": "<span class=\"eyebrow\">Helping business owners since 1972</span>",
             "_css_classes": ""
            },
            "elements": []
@@ -168,7 +168,7 @@
            "widgetType": "html",
            "isInner": false,
            "settings": {
-            "html": "<div class=\"note\"><b>55+ years</b>of helping owners avoid the mistakes that cost the most, long after the paperwork is filed.</div>",
+            "html": "<div class=\"note\"><b>50+ years</b>of helping owners avoid the mistakes that cost the most, long after the paperwork is filed.</div>",
             "_css_classes": ""
            },
            "elements": []
@@ -588,7 +588,7 @@
          "widgetType": "html",
          "isInner": false,
          "settings": {
-          "html": "<div class=\"year\" id=\"story\">1971<small>Where Laughlin began</small></div>",
+          "html": "<div class=\"year\" id=\"story\">1972<small>Where Laughlin began</small></div>",
           "_css_classes": ""
          },
          "elements": []
@@ -620,7 +620,7 @@
            "widgetType": "text-editor",
            "isInner": false,
            "settings": {
-            "editor": "<p>Harley Laughlin founded the company to give everyday entrepreneurs the resources and safeguards large corporations take for granted. More than 55 years later, that is still the job. We've seen what goes wrong when a company isn't maintained, and we help owners avoid it.</p>",
+            "editor": "<p>Harley Laughlin founded the company to give everyday entrepreneurs the resources and safeguards large corporations take for granted. More than 50 years later, that is still the job. We've seen what goes wrong when a company isn't maintained, and we help owners avoid it.</p>",
             "_css_classes": "lede"
            },
            "elements": []
@@ -978,7 +978,7 @@
      "widgetType": "html",
      "isInner": false,
      "settings": {
-      "html": "<footer class=\"ftr\">\n<div class=\"wrap in\">\n<div><span class=\"logo-w\"><img src=\"https://laughlin-staging.yroc.host/wp-content/uploads/2023/09/img-logo.png\" alt=\"Laughlin\"></span>\n<p>Helping business owners start, protect, grow and preserve what they build. Since 1971.</p>\n<p><a href=\"tel:+17758838484\"><strong>775-883-8484</strong></a></p></div>\n<div><h4>Start</h4><ul><li><a href=\"#formation\">Form an LLC</a></li><li><a href=\"#formation\">Form a Corporation</a></li><li><a href=\"#formation\">Compare Entities</a></li><li><a href=\"#formation\">Nonprofits</a></li></ul></div>\n<div><h4>Protect</h4><ul><li><a href=\"#protect\">Corporate Veil Protection</a></li><li><a href=\"#protect\">Registered Agent</a></li><li><a href=\"#protect\">Corporate Minutes</a></li><li><a href=\"#protect\">Compliance</a></li></ul></div>\n<div><h4>Learn</h4><ul><li><a href=\"#learn\">Webinars &amp; Events</a></li><li><a href=\"#learn\">Guides &amp; E-books</a></li><li><a href=\"#learn\">Live Q&amp;A</a></li><li><a href=\"#learn\">Videos</a></li></ul></div>\n<div><h4>Clients</h4><ul><li><a href=\"#clients\">Renew Registered Agent</a></li><li><a href=\"#clients\">Renew CVPS</a></li><li><a href=\"#clients\">Make a Payment</a></li><li><a href=\"#clients\">Client Support</a></li></ul></div>\n</div>\n<div class=\"wrap base\"><span>&copy; 2026 Laughlin Associates, Inc. Serving business owners nationwide since 1971.</span><span>Design preview &mdash; photography is temporary.</span></div>\n</footer>",
+      "html": "<footer class=\"ftr\">\n<div class=\"wrap in\">\n<div><span class=\"logo-w\"><img src=\"https://laughlin-staging.yroc.host/wp-content/uploads/2023/09/img-logo.png\" alt=\"Laughlin\"></span>\n<p>Helping business owners start, protect, grow and preserve what they build. Since 1972.</p>\n<p><a href=\"tel:+17758838484\"><strong>775-883-8484</strong></a></p></div>\n<div><h4>Start</h4><ul><li><a href=\"#formation\">Form an LLC</a></li><li><a href=\"#formation\">Form a Corporation</a></li><li><a href=\"#formation\">Compare Entities</a></li><li><a href=\"#formation\">Nonprofits</a></li></ul></div>\n<div><h4>Protect</h4><ul><li><a href=\"#protect\">Corporate Veil Protection</a></li><li><a href=\"#protect\">Registered Agent</a></li><li><a href=\"#protect\">Corporate Minutes</a></li><li><a href=\"#protect\">Compliance</a></li></ul></div>\n<div><h4>Learn</h4><ul><li><a href=\"#learn\">Webinars &amp; Events</a></li><li><a href=\"#learn\">Guides &amp; E-books</a></li><li><a href=\"#learn\">Live Q&amp;A</a></li><li><a href=\"#learn\">Videos</a></li></ul></div>\n<div><h4>Clients</h4><ul><li><a href=\"#clients\">Renew Registered Agent</a></li><li><a href=\"#clients\">Renew CVPS</a></li><li><a href=\"#clients\">Make a Payment</a></li><li><a href=\"#clients\">Client Support</a></li></ul></div>\n</div>\n<div class=\"wrap base\"><span>&copy; 2026 Laughlin Associates, Inc. Serving business owners nationwide since 1972.</span><span>Design preview &mdash; photography is temporary.</span></div>\n</footer>",
       "_css_classes": "ftr-w"
      },
      "elements": []

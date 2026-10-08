@@ -177,16 +177,16 @@ def build():
         header("Start your entity"),
         # HERO
         C(C(
-            C(T('<span class="eyebrow">Real advisors since 1971</span>'),
+            C(T('<span class="eyebrow">Real advisors since 1972</span>'),
               H("Real answers for <em>every stage</em> of your business.", "h1", "h1"),
-              T("<p>Start the right entity, keep it protected and plan what comes next, with people who've guided business owners for more than 55 years.</p>", "lede"),
+              T("<p>Start the right entity, keep it protected and plan what comes next, with people who've guided business owners for more than 50 years.</p>", "lede"),
               cls="hero-top center"),
             X(f"""<div class="where"><h2>Where are you today?</h2><div class="doors">
 <a class="door" href="#formation"><img src="lx:owner-cafe" alt=""><div class="d-in"><small>I'm starting a business</small><strong>Form your LLC or corporation, the right way.</strong><span>Start your entity &rarr;</span></div></a>
 <a class="door" href="#protect"><img src="lx:owner-workshop" alt=""><div class="d-in"><small>I already own a business</small><strong>Protect, maintain and strengthen it.</strong><span>Explore protection &rarr;</span></div></a>
 <a class="door client" href="#clients"><div class="d-in"><small>I'm a Laughlin client</small><strong>Welcome back.</strong><ul><li>Renew services</li><li>Make a payment</li><li>Client support</li></ul></div></a>
 </div>
-<div class="trust"><span><b>55+ years</b> helping owners</span><span><b>Thousands</b> of businesses supported</span><span><b>2026</b> Inc. 5000 honoree</span><span><b>Nationwide</b> service</span></div></div>"""),
+<div class="trust"><span><b>50+ years</b> helping owners</span><span><b>Thousands</b> of businesses supported</span><span><b>2026</b> Inc. 5000 honoree</span><span><b>Nationwide</b> service</span></div></div>"""),
             cls="wrap"), cls="hero", tag="section"),
         # CONVERSATION
         C(C(
@@ -244,10 +244,10 @@ def build():
         # STORY
         C(C(
             I("laughlin-roundtable", "s-media", "Business owners at a Laughlin event"),
-            C(T('<span class="eyebrow" id="story">Since 1971</span>'),
-              H("Fifty-five years of helping owners avoid costly mistakes.", "h2", "h2"),
+            C(T('<span class="eyebrow" id="story">Since 1972</span>'),
+              H("Five decades of helping owners avoid costly mistakes.", "h2", "h2"),
               X("""<ul class="tl">
-<li><b>1971</b><span>Harley Laughlin, an independent truck driver, starts Laughlin to give entrepreneurs the same resources as big business.</span></li>
+<li><b>1972</b><span>Harley Laughlin, an independent truck driver, starts Laughlin to give entrepreneurs the same resources as big business.</span></li>
 <li><b>Decades of education</b><span>Workshops, guides and live Q&amp;A for business owners all over the country.</span></li>
 <li><b>Today</b><span>Thousands of businesses supported, a 2026 Inc. 5000 honoree, and still answering the phone.</span></li>
 </ul>

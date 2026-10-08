@@ -175,14 +175,14 @@ def footer():
     return X(f"""<footer class="ftr">
 <div class="wrap in">
 <div><span class="logo-w"><img src="{LOGO}" alt="Laughlin"></span>
-<p>Helping business owners start, protect, grow and preserve what they build. Since 1971.</p>
+<p>Helping business owners start, protect, grow and preserve what they build. Since 1972.</p>
 <p><a href="{TEL}"><strong>{PHONE}</strong></a></p></div>
 <div><h4>Start</h4><ul><li><a href="#formation">Form an LLC</a></li><li><a href="#formation">Form a Corporation</a></li><li><a href="#formation">Compare Entities</a></li><li><a href="#formation">Nonprofits</a></li></ul></div>
 <div><h4>Protect</h4><ul><li><a href="#protect">Corporate Veil Protection</a></li><li><a href="#protect">Registered Agent</a></li><li><a href="#protect">Corporate Minutes</a></li><li><a href="#protect">Compliance</a></li></ul></div>
 <div><h4>Learn</h4><ul><li><a href="#learn">Webinars &amp; Events</a></li><li><a href="#learn">Guides &amp; E-books</a></li><li><a href="#learn">Live Q&amp;A</a></li><li><a href="#learn">Videos</a></li></ul></div>
 <div><h4>Clients</h4><ul><li><a href="#clients">Renew Registered Agent</a></li><li><a href="#clients">Renew CVPS</a></li><li><a href="#clients">Make a Payment</a></li><li><a href="#clients">Client Support</a></li></ul></div>
 </div>
-<div class="wrap base"><span>&copy; 2026 Laughlin Associates, Inc. Serving business owners nationwide since 1971.</span><span>Design preview &mdash; photography is temporary.</span></div>
+<div class="wrap base"><span>&copy; 2026 Laughlin Associates, Inc. Serving business owners nationwide since 1972.</span><span>Design preview &mdash; photography is temporary.</span></div>
 </footer>""", cls="ftr-w")
 
 

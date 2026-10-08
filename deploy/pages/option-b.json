@@ -67,7 +67,7 @@
            "widgetType": "text-editor",
            "isInner": false,
            "settings": {
-            "editor": "<span class=\"eyebrow\">Real advisors since 1971</span>",
+            "editor": "<span class=\"eyebrow\">Real advisors since 1972</span>",
             "_css_classes": ""
            },
            "elements": []
@@ -90,7 +90,7 @@
            "widgetType": "text-editor",
            "isInner": false,
            "settings": {
-            "editor": "<p>Start the right entity, keep it protected and plan what comes next, with people who've guided business owners for more than 55 years.</p>",
+            "editor": "<p>Start the right entity, keep it protected and plan what comes next, with people who've guided business owners for more than 50 years.</p>",
             "_css_classes": "lede"
            },
            "elements": []
@@ -103,7 +103,7 @@
          "widgetType": "html",
          "isInner": false,
          "settings": {
-          "html": "<div class=\"where\"><h2>Where are you today?</h2><div class=\"doors\">\n<a class=\"door\" href=\"#formation\"><img src=\"lx:owner-cafe\" alt=\"\"><div class=\"d-in\"><small>I'm starting a business</small><strong>Form your LLC or corporation, the right way.</strong><span>Start your entity &rarr;</span></div></a>\n<a class=\"door\" href=\"#protect\"><img src=\"lx:owner-workshop\" alt=\"\"><div class=\"d-in\"><small>I already own a business</small><strong>Protect, maintain and strengthen it.</strong><span>Explore protection &rarr;</span></div></a>\n<a class=\"door client\" href=\"#clients\"><div class=\"d-in\"><small>I'm a Laughlin client</small><strong>Welcome back.</strong><ul><li>Renew services</li><li>Make a payment</li><li>Client support</li></ul></div></a>\n</div>\n<div class=\"trust\"><span><b>55+ years</b> helping owners</span><span><b>Thousands</b> of businesses supported</span><span><b>2026</b> Inc. 5000 honoree</span><span><b>Nationwide</b> service</span></div></div>",
+          "html": "<div class=\"where\"><h2>Where are you today?</h2><div class=\"doors\">\n<a class=\"door\" href=\"#formation\"><img src=\"lx:owner-cafe\" alt=\"\"><div class=\"d-in\"><small>I'm starting a business</small><strong>Form your LLC or corporation, the right way.</strong><span>Start your entity &rarr;</span></div></a>\n<a class=\"door\" href=\"#protect\"><img src=\"lx:owner-workshop\" alt=\"\"><div class=\"d-in\"><small>I already own a business</small><strong>Protect, maintain and strengthen it.</strong><span>Explore protection &rarr;</span></div></a>\n<a class=\"door client\" href=\"#clients\"><div class=\"d-in\"><small>I'm a Laughlin client</small><strong>Welcome back.</strong><ul><li>Renew services</li><li>Make a payment</li><li>Client support</li></ul></div></a>\n</div>\n<div class=\"trust\"><span><b>50+ years</b> helping owners</span><span><b>Thousands</b> of businesses supported</span><span><b>2026</b> Inc. 5000 honoree</span><span><b>Nationwide</b> service</span></div></div>",
           "_css_classes": ""
          },
          "elements": []
@@ -649,7 +649,7 @@
            "widgetType": "text-editor",
            "isInner": false,
            "settings": {
-            "editor": "<span class=\"eyebrow\" id=\"story\">Since 1971</span>",
+            "editor": "<span class=\"eyebrow\" id=\"story\">Since 1972</span>",
             "_css_classes": ""
            },
            "elements": []
@@ -660,7 +660,7 @@
            "widgetType": "heading",
            "isInner": false,
            "settings": {
-            "title": "Fifty-five years of helping owners avoid costly mistakes.",
+            "title": "Five decades of helping owners avoid costly mistakes.",
             "header_size": "h2",
             "_css_classes": "h2"
            },
@@ -672,7 +672,7 @@
            "widgetType": "html",
            "isInner": false,
            "settings": {
-            "html": "<ul class=\"tl\">\n<li><b>1971</b><span>Harley Laughlin, an independent truck driver, starts Laughlin to give entrepreneurs the same resources as big business.</span></li>\n<li><b>Decades of education</b><span>Workshops, guides and live Q&amp;A for business owners all over the country.</span></li>\n<li><b>Today</b><span>Thousands of businesses supported, a 2026 Inc. 5000 honoree, and still answering the phone.</span></li>\n</ul>\n<div class=\"tq\">&ldquo;The care and concern that I have always received from Laughlin Associates is very much appreciated.&rdquo;<cite>Kristin Summers &middot; Summers Life Balance Coaching</cite></div>",
+            "html": "<ul class=\"tl\">\n<li><b>1972</b><span>Harley Laughlin, an independent truck driver, starts Laughlin to give entrepreneurs the same resources as big business.</span></li>\n<li><b>Decades of education</b><span>Workshops, guides and live Q&amp;A for business owners all over the country.</span></li>\n<li><b>Today</b><span>Thousands of businesses supported, a 2026 Inc. 5000 honoree, and still answering the phone.</span></li>\n</ul>\n<div class=\"tq\">&ldquo;The care and concern that I have always received from Laughlin Associates is very much appreciated.&rdquo;<cite>Kristin Summers &middot; Summers Life Balance Coaching</cite></div>",
             "_css_classes": ""
            },
            "elements": []
@@ -780,7 +780,7 @@
      "widgetType": "html",
      "isInner": false,
      "settings": {
-      "html": "<footer class=\"ftr\">\n<div class=\"wrap in\">\n<div><span class=\"logo-w\"><img src=\"https://laughlin-staging.yroc.host/wp-content/uploads/2023/09/img-logo.png\" alt=\"Laughlin\"></span>\n<p>Helping business owners start, protect, grow and preserve what they build. Since 1971.</p>\n<p><a href=\"tel:+17758838484\"><strong>775-883-8484</strong></a></p></div>\n<div><h4>Start</h4><ul><li><a href=\"#formation\">Form an LLC</a></li><li><a href=\"#formation\">Form a Corporation</a></li><li><a href=\"#formation\">Compare Entities</a></li><li><a href=\"#formation\">Nonprofits</a></li></ul></div>\n<div><h4>Protect</h4><ul><li><a href=\"#protect\">Corporate Veil Protection</a></li><li><a href=\"#protect\">Registered Agent</a></li><li><a href=\"#protect\">Corporate Minutes</a></li><li><a href=\"#protect\">Compliance</a></li></ul></div>\n<div><h4>Learn</h4><ul><li><a href=\"#learn\">Webinars &amp; Events</a></li><li><a href=\"#learn\">Guides &amp; E-books</a></li><li><a href=\"#learn\">Live Q&amp;A</a></li><li><a href=\"#learn\">Videos</a></li></ul></div>\n<div><h4>Clients</h4><ul><li><a href=\"#clients\">Renew Registered Agent</a></li><li><a href=\"#clients\">Renew CVPS</a></li><li><a href=\"#clients\">Make a Payment</a></li><li><a href=\"#clients\">Client Support</a></li></ul></div>\n</div>\n<div class=\"wrap base\"><span>&copy; 2026 Laughlin Associates, Inc. Serving business owners nationwide since 1971.</span><span>Design preview &mdash; photography is temporary.</span></div>\n</footer>",
+      "html": "<footer class=\"ftr\">\n<div class=\"wrap in\">\n<div><span class=\"logo-w\"><img src=\"https://laughlin-staging.yroc.host/wp-content/uploads/2023/09/img-logo.png\" alt=\"Laughlin\"></span>\n<p>Helping business owners start, protect, grow and preserve what they build. Since 1972.</p>\n<p><a href=\"tel:+17758838484\"><strong>775-883-8484</strong></a></p></div>\n<div><h4>Start</h4><ul><li><a href=\"#formation\">Form an LLC</a></li><li><a href=\"#formation\">Form a Corporation</a></li><li><a href=\"#formation\">Compare Entities</a></li><li><a href=\"#formation\">Nonprofits</a></li></ul></div>\n<div><h4>Protect</h4><ul><li><a href=\"#protect\">Corporate Veil Protection</a></li><li><a href=\"#protect\">Registered Agent</a></li><li><a href=\"#protect\">Corporate Minutes</a></li><li><a href=\"#protect\">Compliance</a></li></ul></div>\n<div><h4>Learn</h4><ul><li><a href=\"#learn\">Webinars &amp; Events</a></li><li><a href=\"#learn\">Guides &amp; E-books</a></li><li><a href=\"#learn\">Live Q&amp;A</a></li><li><a href=\"#learn\">Videos</a></li></ul></div>\n<div><h4>Clients</h4><ul><li><a href=\"#clients\">Renew Registered Agent</a></li><li><a href=\"#clients\">Renew CVPS</a></li><li><a href=\"#clients\">Make a Payment</a></li><li><a href=\"#clients\">Client Support</a></li></ul></div>\n</div>\n<div class=\"wrap base\"><span>&copy; 2026 Laughlin Associates, Inc. Serving business owners nationwide since 1972.</span><span>Design preview &mdash; photography is temporary.</span></div>\n</footer>",
       "_css_classes": "ftr-w"
      },
      "elements": []

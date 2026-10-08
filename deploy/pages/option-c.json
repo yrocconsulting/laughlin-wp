@@ -67,7 +67,7 @@
            "widgetType": "text-editor",
            "isInner": false,
            "settings": {
-            "editor": "<span class=\"eyebrow\">Laughlin &middot; Since 1971</span>",
+            "editor": "<span class=\"eyebrow\">Laughlin &middot; Since 1972</span>",
             "_css_classes": ""
            },
            "elements": []
@@ -90,7 +90,7 @@
            "widgetType": "text-editor",
            "isInner": false,
            "settings": {
-            "editor": "<p>For more than 55 years, Laughlin has helped business owners start the right entity, protect what they've built, grow with confidence and plan for what's next.</p>",
+            "editor": "<p>For more than 50 years, Laughlin has helped business owners start the right entity, protect what they've built, grow with confidence and plan for what's next.</p>",
             "_css_classes": "lede"
            },
            "elements": []
@@ -211,7 +211,7 @@
      "widgetType": "html",
      "isInner": false,
      "settings": {
-      "html": "<section class=\"fronts\">\n<div class=\"front f1\" id=\"formation\"><small id=\"start\">Starting a business</small><h2>Form your LLC or corporation, with people who've done it since 1971.</h2>\n<p>File in any state. We'll help you choose the right structure and set it up so it protects you from day one.</p>\n<ul><li><a href=\"#formation\">Form an LLC</a></li><li><a href=\"#formation\">Form a corporation</a></li><li><a href=\"#formation\">Nonprofits</a></li><li><a href=\"#formation\">Compare entity types</a></li></ul>\n<a class=\"go\" href=\"#formation\">Start your entity &rarr;</a></div>\n<div class=\"front f2\" id=\"protect\"><small>Already own a business</small><h2>Keep your company protecting you, year after year.</h2>\n<p>Our Corporate Veil Protection Service handles the upkeep formation-only companies leave to you.</p>\n<ul><li><a href=\"#cvps\">Corporate Veil Protection</a></li><li><a href=\"#protect\">Registered agent</a></li><li><a href=\"#protect\">Minutes &amp; records</a></li><li><a href=\"#review\">Free business review</a></li></ul>\n<a class=\"go\" href=\"#cvps\">Explore CVPS &rarr;</a></div>\n</section>",
+      "html": "<section class=\"fronts\">\n<div class=\"front f1\" id=\"formation\"><small id=\"start\">Starting a business</small><h2>Form your LLC or corporation, with people who've done it since 1972.</h2>\n<p>File in any state. We'll help you choose the right structure and set it up so it protects you from day one.</p>\n<ul><li><a href=\"#formation\">Form an LLC</a></li><li><a href=\"#formation\">Form a corporation</a></li><li><a href=\"#formation\">Nonprofits</a></li><li><a href=\"#formation\">Compare entity types</a></li></ul>\n<a class=\"go\" href=\"#formation\">Start your entity &rarr;</a></div>\n<div class=\"front f2\" id=\"protect\"><small>Already own a business</small><h2>Keep your company protecting you, year after year.</h2>\n<p>Our Corporate Veil Protection Service handles the upkeep formation-only companies leave to you.</p>\n<ul><li><a href=\"#cvps\">Corporate Veil Protection</a></li><li><a href=\"#protect\">Registered agent</a></li><li><a href=\"#protect\">Minutes &amp; records</a></li><li><a href=\"#review\">Free business review</a></li></ul>\n<a class=\"go\" href=\"#cvps\">Explore CVPS &rarr;</a></div>\n</section>",
       "_css_classes": ""
      },
      "elements": []
@@ -473,7 +473,7 @@
            "widgetType": "html",
            "isInner": false,
            "settings": {
-            "html": "<div class=\"big71\" id=\"story\">1971 <svg class=\"mark\" viewBox=\"0 0 60 80\" aria-hidden=\"true\"><path d=\"M0 14 L0 80 L28 76 L28 70 L8 72 L8 20 L28 18 L28 12 Z\" fill=\"#0A2D64\"/><path d=\"M12 6 L34 0 L34 72 L12 70 Z\" fill=\"#F0BE28\"/></svg></div>",
+            "html": "<div class=\"big71\" id=\"story\">1972 <svg class=\"mark\" viewBox=\"0 0 60 80\" aria-hidden=\"true\"><path d=\"M0 14 L0 80 L28 76 L28 70 L8 72 L8 20 L28 18 L28 12 Z\" fill=\"#0A2D64\"/><path d=\"M12 6 L34 0 L34 72 L12 70 Z\" fill=\"#F0BE28\"/></svg></div>",
             "_css_classes": ""
            },
            "elements": []
@@ -484,7 +484,7 @@
            "widgetType": "heading",
            "isInner": false,
            "settings": {
-            "title": "Fifty-five years of business owners, not just filings.",
+            "title": "Five decades of business owners, not just filings.",
             "header_size": "h2",
             "_css_classes": "h2"
            },
@@ -496,7 +496,7 @@
            "widgetType": "text-editor",
            "isInner": false,
            "settings": {
-            "editor": "<p>Harley Laughlin was an independent truck driver who believed small businesses deserved the same protections big companies take for granted. He started Laughlin in 1971 to provide them.</p><p>Since then we've helped thousands of owners across the country. We've seen the mistakes that cost the most, and we've built our services around preventing them.</p>",
+            "editor": "<p>Harley Laughlin was an independent truck driver who believed small businesses deserved the same protections big companies take for granted. He started Laughlin in 1972 to provide them.</p><p>Since then we've helped thousands of owners across the country. We've seen the mistakes that cost the most, and we've built our services around preventing them.</p>",
             "_css_classes": "lede"
            },
            "elements": []
@@ -815,7 +815,7 @@
      "widgetType": "html",
      "isInner": false,
      "settings": {
-      "html": "<footer class=\"ftr\">\n<div class=\"wrap in\">\n<div><span class=\"logo-w\"><img src=\"https://laughlin-staging.yroc.host/wp-content/uploads/2023/09/img-logo.png\" alt=\"Laughlin\"></span>\n<p>Helping business owners start, protect, grow and preserve what they build. Since 1971.</p>\n<p><a href=\"tel:+17758838484\"><strong>775-883-8484</strong></a></p></div>\n<div><h4>Start</h4><ul><li><a href=\"#formation\">Form an LLC</a></li><li><a href=\"#formation\">Form a Corporation</a></li><li><a href=\"#formation\">Compare Entities</a></li><li><a href=\"#formation\">Nonprofits</a></li></ul></div>\n<div><h4>Protect</h4><ul><li><a href=\"#protect\">Corporate Veil Protection</a></li><li><a href=\"#protect\">Registered Agent</a></li><li><a href=\"#protect\">Corporate Minutes</a></li><li><a href=\"#protect\">Compliance</a></li></ul></div>\n<div><h4>Learn</h4><ul><li><a href=\"#learn\">Webinars &amp; Events</a></li><li><a href=\"#learn\">Guides &amp; E-books</a></li><li><a href=\"#learn\">Live Q&amp;A</a></li><li><a href=\"#learn\">Videos</a></li></ul></div>\n<div><h4>Clients</h4><ul><li><a href=\"#clients\">Renew Registered Agent</a></li><li><a href=\"#clients\">Renew CVPS</a></li><li><a href=\"#clients\">Make a Payment</a></li><li><a href=\"#clients\">Client Support</a></li></ul></div>\n</div>\n<div class=\"wrap base\"><span>&copy; 2026 Laughlin Associates, Inc. Serving business owners nationwide since 1971.</span><span>Design preview &mdash; photography is temporary.</span></div>\n</footer>",
+      "html": "<footer class=\"ftr\">\n<div class=\"wrap in\">\n<div><span class=\"logo-w\"><img src=\"https://laughlin-staging.yroc.host/wp-content/uploads/2023/09/img-logo.png\" alt=\"Laughlin\"></span>\n<p>Helping business owners start, protect, grow and preserve what they build. Since 1972.</p>\n<p><a href=\"tel:+17758838484\"><strong>775-883-8484</strong></a></p></div>\n<div><h4>Start</h4><ul><li><a href=\"#formation\">Form an LLC</a></li><li><a href=\"#formation\">Form a Corporation</a></li><li><a href=\"#formation\">Compare Entities</a></li><li><a href=\"#formation\">Nonprofits</a></li></ul></div>\n<div><h4>Protect</h4><ul><li><a href=\"#protect\">Corporate Veil Protection</a></li><li><a href=\"#protect\">Registered Agent</a></li><li><a href=\"#protect\">Corporate Minutes</a></li><li><a href=\"#protect\">Compliance</a></li></ul></div>\n<div><h4>Learn</h4><ul><li><a href=\"#learn\">Webinars &amp; Events</a></li><li><a href=\"#learn\">Guides &amp; E-books</a></li><li><a href=\"#learn\">Live Q&amp;A</a></li><li><a href=\"#learn\">Videos</a></li></ul></div>\n<div><h4>Clients</h4><ul><li><a href=\"#clients\">Renew Registered Agent</a></li><li><a href=\"#clients\">Renew CVPS</a></li><li><a href=\"#clients\">Make a Payment</a></li><li><a href=\"#clients\">Client Support</a></li></ul></div>\n</div>\n<div class=\"wrap base\"><span>&copy; 2026 Laughlin Associates, Inc. Serving business owners nationwide since 1972.</span><span>Design preview &mdash; photography is temporary.</span></div>\n</footer>",
       "_css_classes": "ftr-w"
      },
      "elements": []

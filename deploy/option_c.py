@@ -181,9 +181,9 @@ def build():
         header("Start your entity"),
         # HERO
         C(C(
-            C(T(f'<span class="eyebrow">Laughlin &middot; Since 1971</span>'),
+            C(T(f'<span class="eyebrow">Laughlin &middot; Since 1972</span>'),
               H("Formation is only the beginning. <em>We open the door, then stay with you for everything that comes after.</em>", "h1", "h1"),
-              T("<p>For more than 55 years, Laughlin has helped business owners start the right entity, protect what they've built, grow with confidence and plan for what's next.</p>", "lede"),
+              T("<p>For more than 50 years, Laughlin has helped business owners start the right entity, protect what they've built, grow with confidence and plan for what's next.</p>", "lede"),
               C(B("Start your entity", "#formation", "btn-gold"), B("Protect a business I own", "#protect", "btn-ghost"), cls="btns"),
               X('<div class="creds"><span>Real advisors you can call</span><span>Nationwide</span><span>2026 Inc. 5000 Honoree</span></div>'),
               cls="hero-copy"),
@@ -194,7 +194,7 @@ def build():
             cls="wrap hero-grid"), cls="hero", tag="section"),
         # TWO FRONT DOORS
         X(f"""<section class="fronts">
-<div class="front f1" id="formation"><small id="start">Starting a business</small><h2>Form your LLC or corporation, with people who've done it since 1971.</h2>
+<div class="front f1" id="formation"><small id="start">Starting a business</small><h2>Form your LLC or corporation, with people who've done it since 1972.</h2>
 <p>File in any state. We'll help you choose the right structure and set it up so it protects you from day one.</p>
 <ul><li><a href="#formation">Form an LLC</a></li><li><a href="#formation">Form a corporation</a></li><li><a href="#formation">Nonprofits</a></li><li><a href="#formation">Compare entity types</a></li></ul>
 <a class="go" href="#formation">Start your entity &rarr;</a></div>
@@ -228,9 +228,9 @@ def build():
             cls="wrap cv-grid"), cls="sec cvps", tag="section"),
         # HERITAGE
         C(C(
-            C(X(f'<div class="big71" id="story">1971 {MARK}</div>'),
-              H("Fifty-five years of business owners, not just filings.", "h2", "h2"),
-              T("<p>Harley Laughlin was an independent truck driver who believed small businesses deserved the same protections big companies take for granted. He started Laughlin in 1971 to provide them.</p><p>Since then we've helped thousands of owners across the country. We've seen the mistakes that cost the most, and we've built our services around preventing them.</p>", "lede"),
+            C(X(f'<div class="big71" id="story">1972 {MARK}</div>'),
+              H("Five decades of business owners, not just filings.", "h2", "h2"),
+              T("<p>Harley Laughlin was an independent truck driver who believed small businesses deserved the same protections big companies take for granted. He started Laughlin in 1972 to provide them.</p><p>Since then we've helped thousands of owners across the country. We've seen the mistakes that cost the most, and we've built our services around preventing them.</p>", "lede"),
               X("""<div class="facts"><div><b>Thousands</b><span>of businesses supported</span></div><div><b>Nationwide</b><span>service in every state</span></div><div><b>Inc. 5000</b><span>2026 honoree</span></div></div>
 <p class="quote">&ldquo;My business has been steered in the right direction and I have a proper understanding of my responsibilities to maintain my liability protection.&rdquo;<cite>Dan Lincoln, Bud the Spud Chip Trucks, Inc.</cite></p>"""),
               cls="her-copy"),

@@ -155,7 +155,7 @@ def build():
         header(),
         # HERO
         C(C(
-            C(T('<span class="eyebrow">Helping business owners since 1971</span>'),
+            C(T('<span class="eyebrow">Helping business owners since 1972</span>'),
               H("Forming your company is the beginning. <em>We're here for everything after.</em>", "h1", "h1"),
               T("<p>Laughlin helps entrepreneurs start the right entity, keep it protected, grow with confidence and plan what comes next, with experienced advisors you can actually reach.</p>", "lede"),
               X("""<div class="paths">
@@ -166,7 +166,7 @@ def build():
               cls="hero-copy"),
             C(I("laughlin-1on1", "ph", "A Laughlin advisor working through questions with a business owner"),
               I("laughlin-planning", "ph2", "Business planning session"),
-              X('<div class="note"><b>55+ years</b>of helping owners avoid the mistakes that cost the most, long after the paperwork is filed.</div>'),
+              X('<div class="note"><b>50+ years</b>of helping owners avoid the mistakes that cost the most, long after the paperwork is filed.</div>'),
               cls="hero-media"),
             cls="wrap hero-grid"), cls="hero", tag="section"),
         # JOURNEY
@@ -213,9 +213,9 @@ def build():
             cls="wrap cv-grid"), cls="sec cvps", tag="section"),
         # STORY
         C(C(
-            X('<div class="year" id="story">1971<small>Where Laughlin began</small></div>'),
+            X('<div class="year" id="story">1972<small>Where Laughlin began</small></div>'),
             C(H("Started by an independent truck driver who believed small businesses deserved the same protection as big ones.", "h2", "h2"),
-              T("<p>Harley Laughlin founded the company to give everyday entrepreneurs the resources and safeguards large corporations take for granted. More than 55 years later, that is still the job. We've seen what goes wrong when a company isn't maintained, and we help owners avoid it.</p>", "lede"),
+              T("<p>Harley Laughlin founded the company to give everyday entrepreneurs the resources and safeguards large corporations take for granted. More than 50 years later, that is still the job. We've seen what goes wrong when a company isn't maintained, and we help owners avoid it.</p>", "lede"),
               X("""<div class="proof"><div><b>Thousands</b><span>of businesses supported</span></div><div><b>Nationwide</b><span>formation in every state</span></div><div><b>Inc. 5000</b><span>2026 honoree</span></div></div>
 <p class="quote">&ldquo;I really had no idea where to start. Thanks to your hand-holding, I have a proper understanding of my responsibilities to maintain my liability protection.&rdquo;<cite>DAN LINCOLN &middot; BUD THE SPUD CHIP TRUCKS, INC.</cite></p>"""),
               cls="story-copy"),

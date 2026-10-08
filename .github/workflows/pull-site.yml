@@ -1,0 +1,89 @@
+name: Pull site snapshot
+
+# Read-only: connects to SiteGround over SSH, exports theme files and page
+# content from the staging site, and commits the snapshot to this branch.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/pull-site.yml"
+      - ".github/pull-request.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    env:
+      SITE_DOMAIN: laughlin-staging.yroc.host
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Report which secrets are set
+        env:
+          H: ${{ secrets.SSH_HOST }}
+          U: ${{ secrets.SSH_USER }}
+          P: ${{ secrets.SSH_PORT }}
+          K1: ${{ secrets.SSH_KEY }}
+          K2: ${{ secrets.SSH_PRIVATE_KEY }}
+          PP: ${{ secrets.SSH_PASSPHRASE }}
+        run: |
+          for v in H U P K1 K2 PP; do
+            if [ -n "${!v}" ]; then echo "$v: set"; else echo "$v: missing"; fi
+          done
+
+      - name: Configure SSH
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_KEY: ${{ secrets.SSH_KEY || secrets.SSH_PRIVATE_KEY }}
+          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_site
+          chmod 600 ~/.ssh/id_site
+          if [ -n "$SSH_PASSPHRASE" ]; then
+            ssh-keygen -p -P "$SSH_PASSPHRASE" -N "" -f ~/.ssh/id_site >/dev/null
+          fi
+          cat > ~/.ssh/config <<CFG
+          Host site
+            HostName $SSH_HOST
+            User $SSH_USER
+            Port ${SSH_PORT:-18765}
+            IdentityFile ~/.ssh/id_site
+            StrictHostKeyChecking accept-new
+          CFG
+          ssh site 'echo connected as $(whoami) on $(hostname)'
+
+      - name: Locate WordPress
+        run: |
+          WP_PATH=$(ssh site "ls -d ~/www/$SITE_DOMAIN/public_html 2>/dev/null || dirname \$(find ~/www -maxdepth 4 -name wp-config.php | head -1)")
+          echo "WP_PATH=$WP_PATH" >> "$GITHUB_ENV"
+          echo "WordPress at: $WP_PATH"
+
+      - name: Export snapshot
+        run: |
+          mkdir -p snapshot
+          W="wp --path=$WP_PATH --skip-plugins --skip-themes"
+          ssh site "$W core version; $W option get siteurl; $W theme list; $W plugin list" > snapshot/site-info.txt
+          ssh site "$W post list --post_type=page,elementor_library --post_status=any --fields=ID,post_type,post_name,post_title,post_status --format=csv" > snapshot/pages.csv
+          mkdir -p snapshot/elementor
+          for id in $(tail -n +2 snapshot/pages.csv | cut -d, -f1); do
+            ssh site "$W post meta get $id _elementor_data" > "snapshot/elementor/$id.json" || true
+          done
+          ssh site "$W option get elementor_active_kit" > snapshot/elementor-kit-id.txt || true
+          KIT=$(cat snapshot/elementor-kit-id.txt)
+          [ -n "$KIT" ] && ssh site "$W post meta get $KIT _elementor_page_settings --format=json" > snapshot/elementor-kit-settings.json || true
+          mkdir -p snapshot/themes
+          rsync -az -e ssh "site:$WP_PATH/wp-content/themes/logistics-hub-child/" snapshot/themes/logistics-hub-child/
+          cat snapshot/site-info.txt
+
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add snapshot
+          git diff --cached --quiet || git commit -m "Snapshot staging site"
+          git push

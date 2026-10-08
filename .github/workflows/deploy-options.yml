@@ -79,7 +79,7 @@ jobs:
             fi
             python3 deploy/resolve.py "$f" media-map.json > data.json
             ssh site "$W post meta update $id _elementor_data" < data.json >/dev/null
-            ssh site "$W post meta update $id _elementor_edit_mode builder && $W post meta update $id _elementor_template_type wp-page && $W post meta update $id _elementor_version $V && $W post meta update $id _wp_page_template elementor_canvas && $W post update $id --post_title='$title' --post_status=publish" >/dev/null
+            ssh site "$W post meta update $id _elementor_edit_mode builder && $W post meta update $id _elementor_template_type wp-page && $W post meta update $id _elementor_version $V && $W post meta update $id _wp_page_template elementor_canvas " >/dev/null
             echo "published $slug ($id): https://$SITE_DOMAIN/$slug/"
           done
 

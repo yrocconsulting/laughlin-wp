@@ -115,7 +115,7 @@ body.elementor-template-canvas{background:var(--bg)!important;margin:0}
 .lx .nav a:hover{border-color:var(--gold)}
 .lx .nav .cta{background:var(--navy);color:#fff;padding:12px 18px;border-radius:var(--radius,4px);border:0}
 .lx .nav .cta:hover{background:var(--navy-2)}
-.lx .burger,.lx #lxnav{display:none}
+.lx .burger,.lx #lxnav,.lx .nav .m-only{display:none}
 /* Footer */
 .lx .ftr{background:var(--ftr-bg,var(--navy));color:#dfe6f2;font-size:15px}
 .lx .ftr .in{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:32px;padding-top:64px;padding-bottom:48px}
@@ -131,6 +131,7 @@ body.elementor-template-canvas{background:var(--bg)!important;margin:0}
  .lx .nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 24px;border-bottom:1px solid var(--line);display:none}
  .lx .nav a{padding:14px 0;border-bottom:1px solid var(--line)}
  .lx .nav .cta{margin-top:16px;text-align:center}
+ .lx .nav .m-only{display:block}
  .lx #lxnav:checked ~ .nav{display:flex}
  .lx .burger{display:inline-flex;flex-direction:column;gap:5px;cursor:pointer;padding:10px}
  .lx .burger span{width:24px;height:2px;background:var(--ink);display:block}
@@ -163,7 +164,7 @@ def header(cta="Start your entity"):
 <div class="wrap main">
 <a class="logo" href="#top" aria-label="Laughlin home"><img src="{LOGO}" alt="Laughlin"></a>
 <input type="checkbox" id="lxnav"><label class="burger" for="lxnav" aria-label="Menu"><span></span><span></span><span></span></label>
-<nav class="nav" aria-label="Main">{links}<a class="cta" href="#formation">{cta}</a></nav>
+<nav class="nav" aria-label="Main">{links}<a class="m-only" href="#clients">Existing clients: renew &amp; pay</a><a class="cta" href="#formation">{cta}</a></nav>
 </div>
 </header>""", cls="hdr-w")
 

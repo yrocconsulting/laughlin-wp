@@ -142,7 +142,8 @@ CSS = """
  .lx-c .front,.lx-c .front.f1,.lx-c .front.f2{padding:48px 18px}
  .lx-c .front ul,.lx-c .life,.lx-c .steps,.lx-c .how,.lx-c .facts,.lx-c .diagram .cap{grid-template-columns:1fr}
  .lx-c .doorway{height:420px}
- .lx-c .doorway .tag{position:relative;left:auto;bottom:auto;margin-top:440px;max-width:none}
+ .lx-c .doorway{height:400px}
+ .lx-c .doorway .tag{display:none}
  .lx-c .her-media{grid-template-rows:220px 160px}
  .lx-c .diagram{padding:20px}
 }

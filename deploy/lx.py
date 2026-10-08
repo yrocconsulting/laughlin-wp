@@ -69,7 +69,9 @@ FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="p
 # Base reset shared by every option. Scoped to .lx so the rest of the site is untouched.
 BASE_CSS = """
 /* Hide theme chrome on these preview pages */
-.lqd-dev-notice,[class*="lqd-dev"],#lqd-dev-notice,.liquid-dev-notice{display:none!important}
+div:has(> span > a[href*="portal.liquid-themes.com"]){display:none!important}
+/* Let absolutely positioned decorations sit in their layout box, not the widget wrapper */
+.lx .elementor-element.elementor-widget-html,.lx .elementor-widget-html>.elementor-widget-container{position:static}
 html{scroll-behavior:smooth}
 body.elementor-template-canvas{background:var(--bg)!important;margin:0}
 .lx,.lx *{box-sizing:border-box}

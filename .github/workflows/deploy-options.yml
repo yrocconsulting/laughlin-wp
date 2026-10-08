@@ -1,0 +1,90 @@
+name: Deploy homepage options
+
+# Publishes the homepage option pages (deploy/pages/*.json) to the staging
+# site as Elementor pages. Imports any new images into the media library.
+# Does not touch the live homepage, menus, theme files or other pages.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "deploy/**"
+      - ".github/workflows/deploy-options.yml"
+
+permissions:
+  contents: read
+
+concurrency: deploy-options
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      SITE_DOMAIN: laughlin-staging.yroc.host
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure SSH
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_KEY: ${{ secrets.SSH_KEY || secrets.SSH_PRIVATE_KEY }}
+          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_site
+          chmod 600 ~/.ssh/id_site
+          if [ -n "$SSH_PASSPHRASE" ]; then
+            ssh-keygen -p -P "$SSH_PASSPHRASE" -N "" -f ~/.ssh/id_site >/dev/null
+          fi
+          cat > ~/.ssh/config <<CFG
+          Host site
+            HostName $SSH_HOST
+            User $SSH_USER
+            Port ${SSH_PORT:-18765}
+            IdentityFile ~/.ssh/id_site
+            StrictHostKeyChecking accept-new
+          CFG
+          WP_PATH=$(ssh site "ls -d ~/www/$SITE_DOMAIN/public_html")
+          echo "WP_PATH=$WP_PATH" >> "$GITHUB_ENV"
+
+      - name: Import images
+        run: |
+          W="wp --path=$WP_PATH --skip-plugins --skip-themes"
+          ssh site "mkdir -p ~/lx-import"
+          rsync -az -e ssh deploy/images/ site:lx-import/
+          for f in deploy/images/*.jpg; do
+            name=$(basename "$f" .jpg); name=${name#lx-}
+            id=$(ssh site "$W post list --post_type=attachment --meta_key=_lx_src --meta_value=$name --field=ID --posts_per_page=1")
+            if [ -z "$id" ]; then
+              id=$(ssh site "$W media import ~/lx-import/$(basename "$f") --title='$name' --porcelain")
+              ssh site "$W post meta update $id _lx_src $name" >/dev/null
+              echo "imported $name -> $id"
+            fi
+          done
+          ssh site "$W eval 'echo json_encode(array_reduce(get_posts([\"post_type\"=>\"attachment\",\"meta_key\"=>\"_lx_src\",\"posts_per_page\"=>-1]),function(\$m,\$p){\$m[get_post_meta(\$p->ID,\"_lx_src\",true)]=[\"id\"=>\$p->ID,\"url\"=>wp_get_attachment_url(\$p->ID)];return \$m;},[]));'" > media-map.json
+          cat media-map.json
+
+      - name: Publish pages
+        run: |
+          W="wp --path=$WP_PATH --skip-plugins --skip-themes"
+          V=$(ssh site "$W plugin get elementor --field=version")
+          for f in deploy/pages/*.json; do
+            slug=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['slug'])" "$f")
+            title=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['title'])" "$f")
+            id=$(ssh site "$W post list --post_type=page --name=$slug --post_status=any --field=ID")
+            if [ -z "$id" ]; then
+              id=$(ssh site "$W post create --post_type=page --post_status=publish --post_name=$slug --post_title='$title' --porcelain")
+              echo "created $slug -> $id"
+            fi
+            python3 deploy/resolve.py "$f" media-map.json > data.json
+            ssh site "$W post meta update $id _elementor_data" < data.json >/dev/null
+            ssh site "$W post meta update $id _elementor_edit_mode builder && $W post meta update $id _elementor_template_type wp-page && $W post meta update $id _elementor_version $V && $W post meta update $id _wp_page_template elementor_canvas && $W post update $id --post_title='$title' --post_status=publish" >/dev/null
+            echo "published $slug ($id): https://$SITE_DOMAIN/$slug/"
+          done
+
+      - name: Regenerate Elementor CSS and clear cache
+        run: |
+          ssh site "wp --path=$WP_PATH elementor flush-css" || true
+          ssh site "wp --path=$WP_PATH sg purge" || true
+          ssh site "wp --path=$WP_PATH option get blog_public --skip-plugins --skip-themes"

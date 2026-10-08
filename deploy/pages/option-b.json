@@ -1,0 +1,791 @@
+{
+ "slug": "option-b",
+ "title": "Homepage Option B: Real Answers",
+ "data": [
+  {
+   "id": "1b25944",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "css_classes": "lx lx-b"
+   },
+   "elements": [
+    {
+     "id": "34f25f6",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap\"><style>\n/* Hide theme chrome on these preview pages */\n.lqd-dev-notice,[class*=\"lqd-dev\"],#lqd-dev-notice,.liquid-dev-notice{display:none!important}\nhtml{scroll-behavior:smooth}\nbody.elementor-template-canvas{background:var(--bg)!important;margin:0}\n.lx,.lx *{box-sizing:border-box}\n.lx{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}\n.lx .e-con{--padding-top:0;--padding-bottom:0;--padding-left:0;--padding-right:0;--gap:0;padding:0;margin:0;gap:0;display:flex;flex-direction:column;min-width:0;width:auto;max-width:none;flex:0 1 auto}\n.lx .elementor-element.elementor-widget{margin:0;width:auto;max-width:100%}\n.lx .elementor-widget-container{margin:0;padding:0}\n.lx a{color:inherit}\n.lx p{margin:0 0 1em}\n.lx p:last-child{margin-bottom:0}\n.lx .elementor-heading-title{font-family:var(--f-head);color:inherit;margin:0;padding:0;letter-spacing:normal;text-transform:none}\n.lx .elementor-widget-image img{display:block;width:100%;height:100%;object-fit:cover;max-width:none}\n.lx .elementor-widget-image .elementor-widget-container,.lx .elementor-widget-image{height:100%}\n.lx .elementor-button{display:inline-flex;align-items:center;gap:.5em;font-family:var(--f-body);font-weight:600;font-size:16px;line-height:1.2;padding:15px 24px;border-radius:var(--radius,4px);background:var(--navy);color:#fff;border:1.5px solid var(--navy);text-decoration:none;transition:background .2s,color .2s,border-color .2s;fill:currentColor}\n.lx .elementor-button:hover{background:var(--navy-2);border-color:var(--navy-2);color:#fff}\n.lx .btn-gold .elementor-button{background:var(--gold);border-color:var(--gold);color:var(--navy)}\n.lx .btn-gold .elementor-button:hover{background:#f6cd52;border-color:#f6cd52;color:var(--navy)}\n.lx .btn-ghost .elementor-button{background:transparent;color:var(--navy);border-color:currentColor}\n.lx .btn-ghost .elementor-button:hover{background:var(--navy);color:#fff;border-color:var(--navy)}\n.lx .btn-link .elementor-button{background:none;border:0;padding:6px 0;color:var(--navy);border-bottom:1.5px solid var(--gold);border-radius:0}\n.lx .btn-link .elementor-button:hover{background:none;color:var(--navy);border-color:var(--navy)}\n.lx .btn-link .elementor-button-text:after{content:\" \\2192\"}\n.lx .wrap{width:100%;max-width:1240px;margin-left:auto;margin-right:auto;padding-left:32px;padding-right:32px}\n.lx .row{flex-direction:row}\n.lx .btns{flex-direction:row;flex-wrap:wrap;gap:12px;align-items:center}\n.lx ul.ticks{list-style:none;margin:0;padding:0}\n.lx ul.ticks li{position:relative;padding-left:28px;margin:0 0 10px}\n.lx ul.ticks li:before{content:\"\";position:absolute;left:0;top:.55em;width:14px;height:8px;border-left:2px solid var(--gold-ink);border-bottom:2px solid var(--gold-ink);transform:rotate(-45deg) translateY(-3px)}\n.lx .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}\n/* Header */\n.lx .hdr{position:relative;z-index:50;background:var(--hdr-bg,var(--bg))}\n.lx .util{font-size:14px;border-bottom:1px solid var(--line)}\n.lx .util .in{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:42px}\n.lx .util nav{display:flex;gap:22px;flex-wrap:wrap;align-items:center}\n.lx .util a{text-decoration:none;opacity:.9}\n.lx .util a:hover{opacity:1;text-decoration:underline}\n.lx .util .lbl{font-weight:600}\n.lx .util .tel{font-weight:700}\n.lx .main{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:84px}\n.lx .logo img{height:44px;width:auto;display:block}\n.lx .nav{display:flex;align-items:center;gap:28px}\n.lx .nav a{text-decoration:none;font-weight:600;font-size:16px;color:var(--ink);padding:8px 0;border-bottom:2px solid transparent}\n.lx .nav a:hover{border-color:var(--gold)}\n.lx .nav .cta{background:var(--navy);color:#fff;padding:12px 18px;border-radius:var(--radius,4px);border:0}\n.lx .nav .cta:hover{background:var(--navy-2)}\n.lx .burger,.lx #lxnav{display:none}\n/* Footer */\n.lx .ftr{background:var(--ftr-bg,var(--navy));color:#dfe6f2;font-size:15px}\n.lx .ftr .in{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:32px;padding-top:64px;padding-bottom:48px}\n.lx .ftr h4{font-family:var(--f-body);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}\n.lx .ftr ul{list-style:none;margin:0;padding:0}\n.lx .ftr li{margin:0 0 8px}\n.lx .ftr a{text-decoration:none;color:#fff}\n.lx .ftr a:hover{text-decoration:underline}\n.lx .ftr .logo-w{background:#fff;display:inline-block;padding:10px 14px;border-radius:6px;margin-bottom:16px}\n.lx .ftr .logo-w img{height:34px;display:block}\n.lx .ftr .base{border-top:1px solid rgba(255,255,255,.15);padding-top:20px;padding-bottom:28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#aab6cc}\n@media (max-width:1100px){\n .lx .nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 24px;border-bottom:1px solid var(--line);display:none}\n .lx .nav a{padding:14px 0;border-bottom:1px solid var(--line)}\n .lx .nav .cta{margin-top:16px;text-align:center}\n .lx #lxnav:checked ~ .nav{display:flex}\n .lx .burger{display:inline-flex;flex-direction:column;gap:5px;cursor:pointer;padding:10px}\n .lx .burger span{width:24px;height:2px;background:var(--ink);display:block}\n .lx .main{position:relative}\n .lx .util .acct{display:none}\n .lx .ftr .in{grid-template-columns:1fr 1fr}\n}\n@media (max-width:640px){\n .lx{font-size:16px}\n .lx .wrap{padding-left:18px;padding-right:18px}\n .lx .logo img{height:36px}\n .lx .main{min-height:70px}\n .lx .util .in{justify-content:center}\n .lx .util .talk{display:none}\n .lx .ftr .in{grid-template-columns:1fr}\n}\n\n.lx-b{--bg:#FFFFFF;--ink:#0F1B33;--muted:#4F5B72;--navy:#0A2D64;--navy-2:#1A4590;--gold:#F0BE28;--gold-ink:#8C6A05;--line:#E3E8F0;--mist:#F1F4F9;--cream:#FFF8E6;--f-head:'Figtree',system-ui,sans-serif;--f-body:'Figtree',system-ui,sans-serif;--radius:999px;--r:22px}\n.lx-b .hdr{border-bottom:1px solid var(--line)}\n.lx-b .util{background:var(--navy);color:#fff;border:0}\n.lx-b .util a{color:#fff}\n.lx-b .util .tel{color:var(--gold)}\n.lx-b .nav .cta{border-radius:999px}\n.lx-b .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--navy);background:var(--cream);padding:6px 14px;border-radius:99px}\n.lx-b .eyebrow:before{content:\"\";width:8px;height:8px;border-radius:50%;background:var(--gold)}\n.lx-b .sec{padding-top:104px;padding-bottom:104px}\n.lx-b .h2 .elementor-heading-title{font-size:clamp(32px,3.8vw,50px);line-height:1.08;font-weight:700;letter-spacing:-.025em;color:var(--ink)}\n.lx-b .lede{font-size:19px;color:var(--muted);max-width:640px}\n.lx-b .center{text-align:center;align-items:center}\n.lx-b .center .lede{margin-left:auto;margin-right:auto}\n/* hero */\n.lx-b .hero{padding-top:72px;padding-bottom:40px;background:linear-gradient(180deg,var(--mist),#fff 85%)}\n.lx-b .hero-top{gap:22px;max-width:900px;margin:0 auto}\n.lx-b .h1 .elementor-heading-title{font-size:clamp(42px,5.6vw,76px);line-height:1;font-weight:800;letter-spacing:-.035em;color:var(--ink)}\n.lx-b .h1 em{font-style:normal;color:var(--navy);background:linear-gradient(transparent 68%,rgba(240,190,40,.55) 68% 92%,transparent 92%)}\n.lx-b .where{margin-top:48px}\n.lx-b .where h2{font-size:15px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;margin:0 0 18px;font-family:var(--f-body)}\n.lx-b .doors{display:grid;grid-template-columns:1.15fr 1.15fr .9fr;gap:18px}\n.lx-b .door{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:330px;border-radius:var(--r);overflow:hidden;text-decoration:none;color:#fff;isolation:isolate;transition:transform .25s}\n.lx-b .door:hover{transform:translateY(-4px)}\n.lx-b .door img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s}\n.lx-b .door:hover img{transform:scale(1.04)}\n.lx-b .door:after{content:\"\";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,25,55,0) 30%,rgba(10,25,55,.88))}\n.lx-b .door .d-in{padding:26px}\n.lx-b .door small{display:inline-block;font-size:13px;font-weight:700;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);padding:5px 12px;border-radius:99px;margin-bottom:12px}\n.lx-b .door strong{display:block;font-size:27px;line-height:1.12;font-weight:700;letter-spacing:-.01em}\n.lx-b .door span{display:inline-flex;margin-top:14px;font-weight:700;background:var(--gold);color:var(--navy);padding:10px 16px;border-radius:99px;font-size:15px}\n.lx-b .door.client{background:var(--navy)}\n.lx-b .door.client:after{display:none}\n.lx-b .door.client ul{list-style:none;margin:10px 0 0;padding:0}\n.lx-b .door.client li{padding:7px 0;border-top:1px solid rgba(255,255,255,.18);font-weight:600;font-size:15px}\n.lx-b .door.client li:after{content:\" \\2192\";color:var(--gold)}\n.lx-b .trust{display:flex;justify-content:center;gap:12px 36px;flex-wrap:wrap;margin-top:34px;font-size:15px;color:var(--muted)}\n.lx-b .trust b{color:var(--ink)}\n/* conversation */\n.lx-b .convo{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}\n.lx-b .c-media{position:relative;height:540px}\n.lx-b .c-media .m1{position:absolute;inset:0 90px 70px 0;border-radius:var(--r);overflow:hidden}\n.lx-b .c-media .m2{position:absolute;right:0;bottom:0;width:46%;height:46%;border-radius:var(--r);overflow:hidden;border:6px solid #fff}\n.lx-b .bubble{position:absolute;background:#fff;border-radius:18px;padding:14px 18px;font-weight:600;font-size:15px;box-shadow:0 18px 40px -18px rgba(15,27,51,.35);max-width:260px;line-height:1.35}\n.lx-b .bubble.q{left:-18px;top:36px;border-bottom-left-radius:4px}\n.lx-b .bubble.a{left:30%;bottom:16px;background:var(--navy);color:#fff;border-bottom-right-radius:4px}\n.lx-b .bubble small{display:block;font-size:12px;font-weight:700;opacity:.65;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em}\n.lx-b .c-copy{gap:22px}\n/* questions */\n.lx-b .ask{background:var(--mist)}\n.lx-b .ask-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:44px;flex-direction:row}\n.lx-b .qs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}\n.lx-b .qcard{background:#fff;border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:12px;text-decoration:none;border:1px solid transparent;transition:border-color .2s,transform .2s}\n.lx-b .qcard:hover{border-color:var(--navy);transform:translateY(-3px)}\n.lx-b .qcard .qm{width:38px;height:38px;border-radius:50%;background:var(--cream);color:var(--gold-ink);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:18px}\n.lx-b .qcard strong{font-size:21px;line-height:1.2;color:var(--ink);letter-spacing:-.01em}\n.lx-b .qcard p{font-size:15px;color:var(--muted);margin:0}\n.lx-b .qcard em{margin-top:auto;font-style:normal;font-weight:700;color:var(--navy);font-size:15px}\n.lx-b .qcard.ask-us{background:var(--navy);color:#fff}\n.lx-b .qcard.ask-us strong{color:#fff}\n.lx-b .qcard.ask-us p{color:#C9D4E8}\n.lx-b .qcard.ask-us em{color:var(--gold)}\n/* CVPS */\n.lx-b .cv{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}\n.lx-b .cv-copy{gap:22px}\n.lx-b .veil{background:var(--cream);border-radius:28px;padding:36px;display:grid;grid-template-columns:1fr 18px 1fr;gap:20px;align-items:stretch}\n.lx-b .side{background:#fff;border-radius:18px;padding:22px}\n.lx-b .side h4{margin:0 0 10px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}\n.lx-b .side ul{list-style:none;margin:0;padding:0}\n.lx-b .side li{padding:8px 0;border-top:1px solid var(--line);font-weight:600;font-size:15px}\n.lx-b .wall{background:repeating-linear-gradient(180deg,var(--gold) 0 26px,#E2A90F 26px 30px);border-radius:6px;position:relative}\n.lx-b .wall:after{content:\"Corporate veil\";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-90deg);white-space:nowrap;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}\n.lx-b .check{grid-column:1 / -1;background:#fff;border-radius:18px;padding:22px}\n.lx-b .check h4{margin:0 0 6px;font-size:18px;color:var(--ink)}\n.lx-b .check label{display:flex;gap:10px;align-items:flex-start;padding:8px 0;font-size:15px;cursor:pointer}\n.lx-b .check input{accent-color:var(--navy);width:18px;height:18px;margin-top:2px;flex:0 0 18px}\n.lx-b .check .res{margin-top:10px;font-size:14px;color:var(--muted)}\n/* stairs */\n.lx-b .stairs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:end;margin-top:56px}\n.lx-b .step{border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:10px;background:var(--mist);text-decoration:none}\n.lx-b .step:nth-child(1){min-height:250px}\n.lx-b .step:nth-child(2){min-height:310px;background:#E6ECF6}\n.lx-b .step:nth-child(3){min-height:370px;background:#D7E1F1}\n.lx-b .step:nth-child(4){min-height:430px;background:var(--navy);color:#fff}\n.lx-b .step b{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink)}\n.lx-b .step:nth-child(4) b{color:var(--gold)}\n.lx-b .step h3{margin:0;font-size:30px;font-weight:800;letter-spacing:-.02em}\n.lx-b .step p{font-size:15px;opacity:.85;margin:0}\n.lx-b .step ul{list-style:none;padding:0;margin:auto 0 0}\n.lx-b .step li{font-size:14px;font-weight:600;padding:6px 0;border-top:1px solid rgba(15,27,51,.12)}\n.lx-b .step:nth-child(4) li{border-color:rgba(255,255,255,.2)}\n/* formation strip */\n.lx-b .form{background:var(--navy);color:#fff;border-radius:32px;padding:56px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}\n.lx-b .form h2{color:#fff;font-size:clamp(30px,3.4vw,44px);line-height:1.1;font-weight:800;margin:0 0 12px;letter-spacing:-.02em}\n.lx-b .form p{color:#C9D4E8;font-size:17px}\n.lx-b .chips{display:flex;flex-wrap:wrap;gap:10px}\n.lx-b .chips a{background:rgba(255,255,255,.1);color:#fff;text-decoration:none;padding:12px 18px;border-radius:99px;font-weight:700;border:1px solid rgba(255,255,255,.2)}\n.lx-b .chips a:hover{background:#fff;color:var(--navy)}\n.lx-b .chips a.go{background:var(--gold);color:var(--navy);border-color:var(--gold)}\n.lx-b .form .small{font-size:14px;margin-top:16px;color:#C9D4E8}\n.lx-b .form .small a{color:#fff;font-weight:700}\n/* story */\n.lx-b .story{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}\n.lx-b .s-media{height:560px;border-radius:var(--r);overflow:hidden}\n.lx-b .s-copy{gap:22px}\n.lx-b .tl{list-style:none;margin:8px 0 0;padding:0;border-left:2px solid var(--line)}\n.lx-b .tl li{position:relative;padding:0 0 22px 26px}\n.lx-b .tl li:before{content:\"\";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--navy)}\n.lx-b .tl li:last-child:before{background:var(--gold);border-color:var(--gold)}\n.lx-b .tl b{display:block;font-size:20px;color:var(--navy)}\n.lx-b .tl span{color:var(--muted);font-size:15px}\n.lx-b .tq{background:var(--mist);border-radius:18px;padding:24px;font-size:17px;font-weight:500}\n.lx-b .tq cite{display:block;font-style:normal;font-weight:700;font-size:14px;color:var(--muted);margin-top:10px}\n/* learn */\n.lx-b .learn{background:var(--mist)}\n.lx-b .ev{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:18px;margin-top:44px}\n.lx-b .ecard{background:#fff;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-decoration:none}\n.lx-b .ecard img{width:100%;height:220px;object-fit:cover;display:block}\n.lx-b .ecard .e-in{padding:24px;display:flex;flex-direction:column;gap:8px;flex:1}\n.lx-b .ecard small{font-size:13px;font-weight:700;color:var(--gold-ink)}\n.lx-b .ecard strong{font-size:22px;line-height:1.2;color:var(--ink)}\n.lx-b .ecard p{font-size:15px;color:var(--muted);margin:0}\n.lx-b .ecard em{font-style:normal;font-weight:700;color:var(--navy);margin-top:auto;padding-top:10px}\n.lx-b .ecard.big img{height:300px}\n/* clients + final */\n.lx-b .final{display:grid;grid-template-columns:1fr 1fr;gap:18px}\n.lx-b .panel{border-radius:28px;padding:44px;display:flex;flex-direction:column;gap:14px}\n.lx-b .panel h2{margin:0;font-size:34px;line-height:1.1;font-weight:800;letter-spacing:-.02em}\n.lx-b .panel.talk{background:var(--cream)}\n.lx-b .panel.cl{background:var(--mist)}\n.lx-b .panel .links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}\n.lx-b .panel .links a{background:#fff;border-radius:14px;padding:14px 16px;text-decoration:none;font-weight:700;color:var(--navy);font-size:15px}\n.lx-b .panel .links a:hover{background:var(--navy);color:#fff}\n.lx-b .panel .tel{font-size:36px;font-weight:800;color:var(--navy);text-decoration:none;letter-spacing:-.02em}\n@media (max-width:1100px){\n .lx-b .doors{grid-template-columns:1fr 1fr}\n .lx-b .door.client{grid-column:1 / -1;min-height:auto}\n .lx-b .convo,.lx-b .cv,.lx-b .story,.lx-b .form,.lx-b .final{grid-template-columns:1fr;gap:44px}\n .lx-b .qs{grid-template-columns:1fr 1fr}\n .lx-b .stairs{grid-template-columns:1fr 1fr}\n .lx-b .step{min-height:0!important}\n .lx-b .ev{grid-template-columns:1fr 1fr}\n .lx-b .ask-head{flex-direction:column;align-items:flex-start}\n}\n@media (max-width:640px){\n .lx-b .sec{padding-top:68px;padding-bottom:68px}\n .lx-b .doors,.lx-b .qs,.lx-b .stairs,.lx-b .ev,.lx-b .panel .links{grid-template-columns:1fr}\n .lx-b .door{min-height:260px}\n .lx-b .c-media{height:420px}\n .lx-b .c-media .m1{inset:0 0 90px 0}\n .lx-b .bubble.q{left:10px}\n .lx-b .veil{grid-template-columns:1fr;padding:20px}\n .lx-b .wall{height:44px}\n .lx-b .wall:after{transform:translate(-50%,-50%)}\n .lx-b .form{padding:32px 24px;border-radius:24px}\n .lx-b .panel{padding:28px}\n .lx-b .s-media{height:360px}\n}\n</style>",
+      "_css_classes": "lx-style"
+     },
+     "elements": []
+    },
+    {
+     "id": "b1d10db",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<header class=\"hdr\">\n<div class=\"util\"><div class=\"wrap in\">\n<nav class=\"acct\" aria-label=\"Existing clients\"><span class=\"lbl\">Existing clients:</span><a href=\"#clients\">Renew services</a><a href=\"#clients\">Make a payment</a><a href=\"#clients\">Client support</a></nav>\n<nav aria-label=\"Contact\"><a class=\"talk\" href=\"#advisors\">Talk with an advisor</a><a class=\"tel\" href=\"tel:+17758838484\">775-883-8484</a></nav>\n</div></div>\n<div class=\"wrap main\">\n<a class=\"logo\" href=\"#top\" aria-label=\"Laughlin home\"><img src=\"https://laughlin-staging.yroc.host/wp-content/uploads/2023/09/img-logo.png\" alt=\"Laughlin\"></a>\n<input type=\"checkbox\" id=\"lxnav\"><label class=\"burger\" for=\"lxnav\" aria-label=\"Menu\"><span></span><span></span><span></span></label>\n<nav class=\"nav\" aria-label=\"Main\"><a href=\"#start\">Start a Business</a><a href=\"#protect\">Protect My Business</a><a href=\"#grow\">Grow My Business</a><a href=\"#learn\">Resources &amp; Events</a><a href=\"#story\">About</a><a class=\"cta\" href=\"#formation\">Start your entity</a></nav>\n</div>\n</header>",
+      "_css_classes": "hdr-w"
+     },
+     "elements": []
+    },
+    {
+     "id": "3f8cb6f",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "css_classes": "hero",
+      "html_tag": "section"
+     },
+     "elements": [
+      {
+       "id": "a67e091",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "css_classes": "wrap"
+       },
+       "elements": [
+        {
+         "id": "55739e9",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "css_classes": "hero-top center"
+         },
+         "elements": [
+          {
+           "id": "f474ce9",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<span class=\"eyebrow\">Real advisors since 1971</span>",
+            "_css_classes": ""
+           },
+           "elements": []
+          },
+          {
+           "id": "107df04",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Real answers for <em>every stage</em> of your business.",
+            "header_size": "h1",
+            "_css_classes": "h1"
+           },
+           "elements": []
+          },
+          {
+           "id": "2d55326",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Start the right entity, keep it protected and plan what comes next, with people who've guided business owners for more than 55 years.</p>",
+            "_css_classes": "lede"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "e570c68",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<div class=\"where\"><h2>Where are you today?</h2><div class=\"doors\">\n<a class=\"door\" href=\"#formation\"><img src=\"lx:owner-cafe\" alt=\"\"><div class=\"d-in\"><small>I'm starting a business</small><strong>Form your LLC or corporation, the right way.</strong><span>Start your entity &rarr;</span></div></a>\n<a class=\"door\" href=\"#protect\"><img src=\"lx:owner-workshop\" alt=\"\"><div class=\"d-in\"><small>I already own a business</small><strong>Protect, maintain and strengthen it.</strong><span>Explore protection &rarr;</span></div></a>\n<a class=\"door client\" href=\"#clients\"><div class=\"d-in\"><small>I'm a Laughlin client</small><strong>Welcome back.</strong><ul><li>Renew services</li><li>Make a payment</li><li>Client support</li></ul></div></a>\n</div>\n<div class=\"trust\"><span><b>55+ years</b> helping owners</span><span><b>Thousands</b> of businesses supported</span><span><b>2026</b> Inc. 5000 honoree</span><span><b>Nationwide</b> service</span></div></div>",
+          "_css_classes": ""
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "df8b03c",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "css_classes": "sec",
+      "html_tag": "section"
+     },
+     "elements": [
+      {
+       "id": "af3750b",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "css_classes": "wrap convo"
+       },
+       "elements": [
+        {
+         "id": "c8f08d8",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "css_classes": "c-media"
+         },
+         "elements": [
+          {
+           "id": "d6b2c3c",
+           "elType": "widget",
+           "widgetType": "image",
+           "isInner": false,
+           "settings": {
+            "image": {
+             "url": "lx:laughlin-advisor",
+             "id": "",
+             "alt": "A Laughlin advisor in conversation with a business owner",
+             "source": "library"
+            },
+            "image_size": "full",
+            "_css_classes": "m1"
+           },
+           "elements": []
+          },
+          {
+           "id": "4824157",
+           "elType": "widget",
+           "widgetType": "image",
+           "isInner": false,
+           "settings": {
+            "image": {
+             "url": "lx:laughlin-1on1",
+             "id": "",
+             "alt": "One-on-one guidance",
+             "source": "library"
+            },
+            "image_size": "full",
+            "_css_classes": "m2"
+           },
+           "elements": []
+          },
+          {
+           "id": "a8e7091",
+           "elType": "widget",
+           "widgetType": "html",
+           "isInner": false,
+           "settings": {
+            "html": "<div class=\"bubble q\"><small>Business owner</small>Is my LLC actually protecting me?</div><div class=\"bubble a\"><small>Laughlin advisor</small>Let's look at your records together. Here's what to check.</div>",
+            "_css_classes": ""
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "2309b61",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "css_classes": "c-copy"
+         },
+         "elements": [
+          {
+           "id": "82a3c40",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<span class=\"eyebrow\" id=\"advisors\">You're not on your own</span>",
+            "_css_classes": ""
+           },
+           "elements": []
+          },
+          {
+           "id": "667c09c",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Formation is only the beginning. That's where most companies leave you.",
+            "header_size": "h2",
+            "_css_classes": "h2"
+           },
+           "elements": []
+          },
+          {
+           "id": "939aff6",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Online filing services stop once your paperwork is accepted. But the questions start after that: what to file, what to keep, what could put your personal assets at risk.</p><p>At Laughlin you can call and talk to an advisor who knows business structure. We'll explain it in plain English and help you keep up.</p>",
+            "_css_classes": "lede"
+           },
+           "elements": []
+          },
+          {
+           "id": "8361fcb",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "css_classes": "btns"
+           },
+           "elements": [
+            {
+             "id": "8dc2b3a",
+             "elType": "widget",
+             "widgetType": "button",
+             "isInner": false,
+             "settings": {
+              "text": "Talk with an advisor",
+              "link": {
+               "url": "tel:+17758838484",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "_css_classes": ""
+             },
+             "elements": []
+            },
+            {
+             "id": "94def91",
+             "elType": "widget",
+             "widgetType": "button",
+             "isInner": false,
+             "settings": {
+              "text": "Attend a free live Q&amp;A",
+              "link": {
+               "url": "#learn",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "_css_classes": "btn-ghost"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "1f4a27e",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "css_classes": "sec ask",
+      "html_tag": "section"
+     },
+     "elements": [
+      {
+       "id": "b032f11",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "css_classes": "wrap"
+       },
+       "elements": [
+        {
+         "id": "aed7519",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "css_classes": "ask-head"
+         },
+         "elements": [
+          {
+           "id": "f15e014",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "css_classes": ""
+           },
+           "elements": [
+            {
+             "id": "149cb8e",
+             "elType": "widget",
+             "widgetType": "text-editor",
+             "isInner": false,
+             "settings": {
+              "editor": "<span class=\"eyebrow\" id=\"learn\">Ask Laughlin</span>",
+              "_css_classes": ""
+             },
+             "elements": []
+            },
+            {
+             "id": "68c4181",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "The questions owners ask us most.",
+              "header_size": "h2",
+              "_css_classes": "h2"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "47b3c07",
+           "elType": "widget",
+           "widgetType": "button",
+           "isInner": false,
+           "settings": {
+            "text": "Browse all answers",
+            "link": {
+             "url": "#learn",
+             "is_external": "",
+             "nofollow": ""
+            },
+            "_css_classes": "btn-link"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "bd7e65f",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<div class=\"qs\"><a class=\"qcard\" href=\"#learn\"><span class=\"qm\">?</span><strong>What happens after I form an LLC?</strong><p>Forming the company is step one. To keep its protection, you'll need a registered agent, annual state filings, records of major decisions and finances kept separate from your own.</p><em>Read the answer &rarr;</em></a><a class=\"qcard\" href=\"#learn\"><span class=\"qm\">?</span><strong>Is my LLC actually protecting me?</strong><p>Only if it's run like a separate business. Courts look at whether you kept records, held meetings where required and kept personal and business money apart.</p><em>Read the answer &rarr;</em></a><a class=\"qcard\" href=\"#learn\"><span class=\"qm\">?</span><strong>What can weaken corporate protection?</strong><p>Missed filings, a lapsed registered agent, no minutes, mixing personal and business funds, and records that don't match what really happened.</p><em>Read the answer &rarr;</em></a><a class=\"qcard\" href=\"#learn\"><span class=\"qm\">?</span><strong>Do I need corporate minutes?</strong><p>Corporations are generally required to keep them, and LLCs benefit from them. Minutes are your proof that the company made its own decisions.</p><em>Read the answer &rarr;</em></a><a class=\"qcard\" href=\"#learn\"><span class=\"qm\">?</span><strong>What does a Registered Agent actually do?</strong><p>They accept legal and state notices for your company at a reliable address during business hours, so nothing important gets missed.</p><em>Read the answer &rarr;</em></a><a class=\"qcard ask-us\" href=\"tel:+17758838484\"><span class=\"qm\">&hellip;</span><strong>Have a different question?</strong><p>Ask a Laughlin advisor. Real people, real answers, no ticket queue.</p><em>Call 775-883-8484 &rarr;</em></a></div>",
+          "_css_classes": ""
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "e95ae0b",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "css_classes": "sec",
+      "html_tag": "section"
+     },
+     "elements": [
+      {
+       "id": "082b3ac",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "css_classes": "wrap cv"
+       },
+       "elements": [
+        {
+         "id": "7d667fe",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "css_classes": "cv-copy"
+         },
+         "elements": [
+          {
+           "id": "f5e479d",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<span class=\"eyebrow\" id=\"protect\">Corporate Veil Protection Service</span>",
+            "_css_classes": ""
+           },
+           "elements": []
+          },
+          {
+           "id": "74315c1",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Your company protects your personal assets, as long as it's maintained.",
+            "header_size": "h2",
+            "_css_classes": "h2"
+           },
+           "elements": []
+          },
+          {
+           "id": "fdab10d",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Forming an LLC or corporation puts a legal wall, the <strong>corporate veil</strong>, between your business and your personal life. If the company isn't kept up, a court can look past that wall and reach your home and savings.</p><p>Our Corporate Veil Protection Service keeps the wall standing: deadline reminders, help with minutes and resolutions, organized records and an annual check-in with a real advisor.</p>",
+            "_css_classes": "lede"
+           },
+           "elements": []
+          },
+          {
+           "id": "2f6e723",
+           "elType": "container",
+           "isInner": false,
+           "settings": {
+            "content_width": "full",
+            "css_classes": "btns"
+           },
+           "elements": [
+            {
+             "id": "74383aa",
+             "elType": "widget",
+             "widgetType": "button",
+             "isInner": false,
+             "settings": {
+              "text": "Explore Corporate Veil Protection",
+              "link": {
+               "url": "#protect",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "_css_classes": ""
+             },
+             "elements": []
+            },
+            {
+             "id": "89ca484",
+             "elType": "widget",
+             "widgetType": "button",
+             "isInner": false,
+             "settings": {
+              "text": "Get a free business review",
+              "link": {
+               "url": "#review",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "_css_classes": "btn-ghost"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "f12147b",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<div class=\"veil\">\n<div class=\"side\"><h4>Your business</h4><ul><li>Contracts</li><li>Business debts</li><li>Lawsuits</li></ul></div>\n<div class=\"wall\" aria-hidden=\"true\"></div>\n<div class=\"side\"><h4>Your personal life</h4><ul><li>Your home</li><li>Your savings</li><li>Your family</li></ul></div>\n<div class=\"check\" id=\"review\"><h4>Quick self-check: is your wall solid?</h4>\n<label><input type=\"checkbox\"> We keep written minutes of major decisions</label>\n<label><input type=\"checkbox\"> Business and personal money are in separate accounts</label>\n<label><input type=\"checkbox\"> Our state filings and registered agent are current</label>\n<label><input type=\"checkbox\"> Contracts are signed in the company's name</label>\n<p class=\"res\">Missed any? That's common, and fixable. <a href=\"#review\"><strong>Request a free business review &rarr;</strong></a></p></div>\n</div>",
+          "_css_classes": ""
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "996a774",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "css_classes": "sec",
+      "html_tag": "section"
+     },
+     "elements": [
+      {
+       "id": "bf8a2f8",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "css_classes": "wrap"
+       },
+       "elements": [
+        {
+         "id": "fc893a4",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "css_classes": "center"
+         },
+         "elements": [
+          {
+           "id": "43f1351",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<span class=\"eyebrow\" id=\"grow\">One relationship, every stage</span>",
+            "_css_classes": ""
+           },
+           "elements": []
+          },
+          {
+           "id": "e5fc104",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Start. Protect. Grow. Preserve.",
+            "header_size": "h2",
+            "_css_classes": "h2"
+           },
+           "elements": []
+          },
+          {
+           "id": "7321e60",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>As your business climbs, your needs change. We're with you at every step.</p>",
+            "_css_classes": "lede"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "68927b0",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<div class=\"stairs\"><a class=\"step\" href=\"#start\"><b>Stage 1</b><h3>Start</h3><p>Choose the right entity and form it correctly.</p><ul><li>LLC &amp; corporation formation</li><li>Entity comparison</li><li>EIN &amp; business setup</li></ul></a><a class=\"step\" href=\"#protect\"><b>Stage 2</b><h3>Protect</h3><p>Keep the protection you formed the company for.</p><ul><li>Corporate Veil Protection Service</li><li>Registered agent</li><li>Corporate records &amp; minutes</li></ul></a><a class=\"step\" href=\"#grow\"><b>Stage 3</b><h3>Grow</h3><p>Build credit, structure and strategy as you scale.</p><ul><li>Business credit</li><li>Strategy sessions</li><li>Webinars &amp; live Q&amp;A</li></ul></a><a class=\"step\" href=\"#preserve\"><b>Stage 4</b><h3>Preserve</h3><p>Plan for what comes next for you and your family.</p><ul><li>Asset protection planning</li><li>Living trusts</li><li>Succession planning</li></ul></a></div>",
+          "_css_classes": ""
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "ace44bb",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "css_classes": "sec",
+      "html_tag": "section"
+     },
+     "elements": [
+      {
+       "id": "dc5b1ce",
+       "elType": "widget",
+       "widgetType": "html",
+       "isInner": false,
+       "settings": {
+        "html": "<div class=\"wrap\"><div class=\"form\" id=\"formation\"><div>\n<h2 id=\"start\">Ready to form your company? Start in minutes.</h2>\n<p>File your LLC or corporation in any state, with real people checking the details and answering your questions along the way.</p></div>\n<div><div class=\"chips\"><a class=\"go\" href=\"#formation\">Start an LLC &rarr;</a><a href=\"#formation\">Corporation</a><a href=\"#formation\">S-Corp</a><a href=\"#formation\">Nonprofit</a><a href=\"#formation\">Compare entities</a></div>\n<p class=\"small\">Not sure which entity fits? <a href=\"tel:+17758838484\">Call 775-883-8484</a> and we'll help you decide.</p></div></div></div>",
+        "_css_classes": ""
+       },
+       "elements": []
+      }
+     ]
+    },
+    {
+     "id": "a74fb8f",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "css_classes": "sec",
+      "html_tag": "section"
+     },
+     "elements": [
+      {
+       "id": "a5a8f40",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "css_classes": "wrap story"
+       },
+       "elements": [
+        {
+         "id": "ab520d4",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "lx:laughlin-roundtable",
+           "id": "",
+           "alt": "Business owners at a Laughlin event",
+           "source": "library"
+          },
+          "image_size": "full",
+          "_css_classes": "s-media"
+         },
+         "elements": []
+        },
+        {
+         "id": "9138144",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "css_classes": "s-copy"
+         },
+         "elements": [
+          {
+           "id": "eceab23",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<span class=\"eyebrow\" id=\"story\">Since 1971</span>",
+            "_css_classes": ""
+           },
+           "elements": []
+          },
+          {
+           "id": "e8e44fa",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Fifty-five years of helping owners avoid costly mistakes.",
+            "header_size": "h2",
+            "_css_classes": "h2"
+           },
+           "elements": []
+          },
+          {
+           "id": "fc87f6f",
+           "elType": "widget",
+           "widgetType": "html",
+           "isInner": false,
+           "settings": {
+            "html": "<ul class=\"tl\">\n<li><b>1971</b><span>Harley Laughlin, an independent truck driver, starts Laughlin to give entrepreneurs the same resources as big business.</span></li>\n<li><b>Decades of education</b><span>Workshops, guides and live Q&amp;A for business owners all over the country.</span></li>\n<li><b>Today</b><span>Thousands of businesses supported, a 2026 Inc. 5000 honoree, and still answering the phone.</span></li>\n</ul>\n<div class=\"tq\">&ldquo;The care and concern that I have always received from Laughlin Associates is very much appreciated.&rdquo;<cite>Kristin Summers &middot; Summers Life Balance Coaching</cite></div>",
+            "_css_classes": ""
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "700ff88",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "css_classes": "sec learn",
+      "html_tag": "section"
+     },
+     "elements": [
+      {
+       "id": "6e7869e",
+       "elType": "container",
+       "isInner": false,
+       "settings": {
+        "content_width": "full",
+        "css_classes": "wrap"
+       },
+       "elements": [
+        {
+         "id": "c9559b9",
+         "elType": "container",
+         "isInner": false,
+         "settings": {
+          "content_width": "full",
+          "css_classes": ""
+         },
+         "elements": [
+          {
+           "id": "162075b",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<span class=\"eyebrow\">Learn with us</span>",
+            "_css_classes": ""
+           },
+           "elements": []
+          },
+          {
+           "id": "8515492",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Live, free and full of real questions.",
+            "header_size": "h2",
+            "_css_classes": "h2"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "7d6b9ad",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<div class=\"ev\">\n<a class=\"ecard big\" href=\"#learn\"><img src=\"lx:laughlin-planning\" alt=\"\"><div class=\"e-in\"><small>Every month &middot; Online</small><strong>LAI Business Edge: Live Q&amp;A</strong><p>Bring your questions about structure, compliance and protection. Our advisors answer them live.</p><em>Reserve a seat &rarr;</em></div></a>\n<a class=\"ecard\" href=\"#learn\"><img src=\"lx:couple-docs\" alt=\"\"><div class=\"e-in\"><small>Free guide</small><strong>LLC Quick Start Guide</strong><p>What to do in your first 90 days after forming.</p><em>Download &rarr;</em></div></a>\n<a class=\"ecard\" href=\"#learn\"><img src=\"lx:laughlin-summit\" alt=\"\"><div class=\"e-in\"><small>Nov 13&ndash;15, 2026 &middot; Dallas</small><strong>Magnify Your Wealth Summit</strong><p>Three days of strategy for business owners and investors.</p><em>Learn more &rarr;</em></div></a>\n</div>",
+          "_css_classes": ""
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bfdb5ea",
+     "elType": "container",
+     "isInner": false,
+     "settings": {
+      "content_width": "full",
+      "css_classes": "sec",
+      "html_tag": "section"
+     },
+     "elements": [
+      {
+       "id": "dcec6f8",
+       "elType": "widget",
+       "widgetType": "html",
+       "isInner": false,
+       "settings": {
+        "html": "<div class=\"wrap final\">\n<div class=\"panel talk\"><span class=\"eyebrow\">Talk with a person</span><h2>You don't have to figure this out alone.</h2><p>Call and talk to an advisor about starting, protecting or restructuring your business.</p><a class=\"tel\" href=\"tel:+17758838484\">775-883-8484</a></div>\n<div class=\"panel cl\" id=\"clients\"><span class=\"eyebrow\">Existing clients</span><h2>Welcome back.</h2><div class=\"links\"><a href=\"#clients\">Renew Registered Agent</a><a href=\"#clients\">Renew CVPS</a><a href=\"#clients\">Make a Payment</a><a href=\"#clients\">Schedule Support</a><a href=\"#clients\">Client Resources</a><a href=\"#clients\">Update My Info</a></div></div>\n</div>",
+        "_css_classes": ""
+       },
+       "elements": []
+      }
+     ]
+    },
+    {
+     "id": "7b208ec",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<footer class=\"ftr\">\n<div class=\"wrap in\">\n<div><span class=\"logo-w\"><img src=\"https://laughlin-staging.yroc.host/wp-content/uploads/2023/09/img-logo.png\" alt=\"Laughlin\"></span>\n<p>Helping business owners start, protect, grow and preserve what they build. Since 1971.</p>\n<p><a href=\"tel:+17758838484\"><strong>775-883-8484</strong></a></p></div>\n<div><h4>Start</h4><ul><li><a href=\"#formation\">Form an LLC</a></li><li><a href=\"#formation\">Form a Corporation</a></li><li><a href=\"#formation\">Compare Entities</a></li><li><a href=\"#formation\">Nonprofits</a></li></ul></div>\n<div><h4>Protect</h4><ul><li><a href=\"#protect\">Corporate Veil Protection</a></li><li><a href=\"#protect\">Registered Agent</a></li><li><a href=\"#protect\">Corporate Minutes</a></li><li><a href=\"#protect\">Compliance</a></li></ul></div>\n<div><h4>Learn</h4><ul><li><a href=\"#learn\">Webinars &amp; Events</a></li><li><a href=\"#learn\">Guides &amp; E-books</a></li><li><a href=\"#learn\">Live Q&amp;A</a></li><li><a href=\"#learn\">Videos</a></li></ul></div>\n<div><h4>Clients</h4><ul><li><a href=\"#clients\">Renew Registered Agent</a></li><li><a href=\"#clients\">Renew CVPS</a></li><li><a href=\"#clients\">Make a Payment</a></li><li><a href=\"#clients\">Client Support</a></li></ul></div>\n</div>\n<div class=\"wrap base\"><span>&copy; 2026 Laughlin Associates, Inc. Serving business owners nationwide since 1971.</span><span>Design preview &mdash; photography is temporary.</span></div>\n</footer>",
+      "_css_classes": "ftr-w"
+     },
+     "elements": []
+    }
+   ]
+  }
+ ]
+}

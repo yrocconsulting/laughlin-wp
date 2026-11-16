@@ -65,6 +65,17 @@ jobs:
           ssh site "$W eval 'echo json_encode(array_reduce(get_posts([\"post_type\"=>\"attachment\",\"meta_key\"=>\"_lx_src\",\"posts_per_page\"=>-1]),function(\$m,\$p){\$m[get_post_meta(\$p->ID,\"_lx_src\",true)]=[\"id\"=>\$p->ID,\"url\"=>wp_get_attachment_url(\$p->ID)];return \$m;},[]));'" > media-map.json
           cat media-map.json
 
+      - name: Remove retired pages
+        if: hashFiles('deploy/remove.txt') != ''
+        run: |
+          W="wp --path=$WP_PATH --skip-plugins --skip-themes"
+          while read -r slug <&3; do
+            [ -n "$slug" ] || continue
+            for id in $(ssh site "$W post list --post_type=page --name=$slug --post_status=any --field=ID"); do
+              ssh site "$W post delete $id" && echo "moved $slug ($id) to trash"
+            done
+          done 3< deploy/remove.txt
+
       - name: Publish pages
         run: |
           W="wp --path=$WP_PATH --skip-plugins --skip-themes"
@@ -83,7 +94,8 @@ jobs:
               pid=${IDS[$parent_path]}
               [ -n "$pid" ] || { echo "Parent $parent_path not published before $path"; exit 1; }
             fi
-            id=$(ssh site "$W post list --post_type=page --name=$slug --post_parent=$pid --post_status=any --field=ID" | head -1)
+            id=$(ssh site "$W post list --post_type=page --post_status=publish,draft,pending,private --posts_per_page=-1 --fields=ID,post_name,post_parent --format=csv" \
+              | python3 -c "import csv,sys; s,p=sys.argv[1],sys.argv[2]; print(next((r['ID'] for r in csv.DictReader(sys.stdin) if r['post_name']==s and r['post_parent']==p),''))" "$slug" "$pid")
             if [ -z "$id" ]; then
               id=$(ssh site "$W post create --post_type=page --post_status=publish --post_name=$slug --post_parent=$pid --post_title='$title' --porcelain")
               echo "created /$path/ -> $id"

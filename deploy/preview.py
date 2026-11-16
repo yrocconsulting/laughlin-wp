@@ -23,7 +23,7 @@ def r(e):
     else: inner = f"[{w}]"
     return f'<div class="elementor-element elementor-widget elementor-widget-{w} {c}"><div class="elementor-widget-container">{inner}</div></div>'
 
-for f in sorted(os.listdir(os.path.join(here, "pages"))):
+for f in sorted(x for x in os.listdir(os.path.join(here, "pages")) if x.endswith(".json")):
     p = json.load(open(os.path.join(here, "pages", f)))
     body = "".join(r(e) for e in p["data"])
     out = os.path.join(sys.argv[1], f.replace(".json", ".html"))

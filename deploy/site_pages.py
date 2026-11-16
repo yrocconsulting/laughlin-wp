@@ -123,13 +123,9 @@ PAGE_CSS = """
 
 
 def page(*sections):
-    """Wrap page sections with the shared style, header, client band and footer."""
-    return [C(
-        style(FONTQ, C_CSS + PAGE_CSS),
-        header("Start your business", SITE_LINKS),
-        *sections,
-        footer(SITE_LINKS),
-        cls="lx lx-c")]
+    """Wrap page sections with the full-site header and footer."""
+    import sitekit
+    return sitekit.page(*sections)
 
 
 def phero(eyebrow, title, lede, extra=None, img=None, alt=""):
@@ -163,38 +159,38 @@ def services():
     reset_ids("svc")
     start = "".join([
         svc("Form an LLC or corporation", "We help you choose the right structure, then file it correctly in any state.",
-            ["LLC", "S-Corporation", "C-Corporation", "Nonprofit", "Benefit corporation"], "/contact/", "Start now"),
+            ["LLC", "S-Corporation", "C-Corporation", "Nonprofit", "Benefit corporation"], "/start-a-business/", "Start now"),
         svc("Compare structures", "Not sure which entity fits? See the differences side by side, or talk it through with an advisor.",
-            link="/contact/", label="Ask an advisor"),
-        svc("EIN and business setup", "Employer ID, corporate record book and a clear checklist of what to do next."),
-        svc("Name search and DBA", "Check your company name is available and register a trade name if you need one."),
-        svc("Non-U.S. residents", "Form and run a U.S. company from outside the country."),
+            link="/start-a-business/compare-structures/", label="Compare"),
+        svc("EIN and business setup", "Employer ID, corporate record book and a clear checklist of what to do next.", link="/start-a-business/filing-services/"),
+        svc("Name search and DBA", "Check your company name is available and register a trade name if you need one.", link="/start-a-business/filing-services/"),
+        svc("Non-U.S. residents", "Form and run a U.S. company from outside the country.", link="/start-a-business/international/"),
     ])
     protect = (
         f"""<div class="svc feature" id="cvps"><small>Our signature service</small><h3>Corporate Veil Protection Service</h3>
 <p>Your company keeps business debts and lawsuits away from your home and savings, as long as it's run like a separate business. CVPS keeps up the formalities so the protection holds.</p>
 <ul><li>Deadline and renewal tracking</li><li>Annual minutes and resolutions</li><li>Corporate records kept in order</li><li>Yearly review with an advisor</li></ul>
-<a class="go" href="/contact/">Talk to us about CVPS &rarr;</a></div>"""
+<a class="go" href="/protect-my-business/corporate-veil-protection/">Explore CVPS &rarr;</a></div>"""
         + svc("Registered agent", "A reliable address that receives legal and state notices for your company, so nothing gets missed.",
-              link="/contact/#clients", label="Renew")
-        + svc("Corporate minutes and record book", "Meetings and decisions documented properly. Your proof the company stands on its own.")
+              link="/protect-my-business/registered-agent/")
+        + svc("Corporate minutes and record book", "Meetings and decisions documented properly. Your proof the company stands on its own.", link="/protect-my-business/corporate-records/")
         + svc("Compliance filings", "Annual reports and state filings, on time, every year.",
-              ["Annual reports", "Certificate of good standing", "Foreign qualification"])
+              ["Annual reports", "Certificate of good standing", "Foreign qualification"], "/start-a-business/filing-services/")
         + svc("Free business review", "Is your company still protecting you? We'll check your structure and records with you.",
-              link="/contact/", label="Request a review"))
+              link="/business-review/", label="Request a review"))
     grow = "".join([
-        svc("Business credit", "Build credit in the company's name, separate from your own."),
-        svc("Strategy sessions", "One-to-one time with an advisor on structure, taxes and next steps."),
-        svc("Live Q&amp;A and webinars", "LAI Business Edge: bring your questions, get straight answers. Free.", link="/#learn", label="See dates"),
-        svc("Mail forwarding", "A business address and mail handling, so your home address stays private."),
+        svc("Business credit", "Build credit in the company's name, separate from your own.", link="/grow-my-business/business-credit/"),
+        svc("Strategy sessions", "One-to-one time with an advisor on structure, taxes and next steps.", link="/business-review/"),
+        svc("Live Q&amp;A and webinars", "LAI Business Edge: bring your questions, get straight answers. Free.", link="/resources/events/", label="See dates"),
+        svc("Nevada mail forwarding", "A business address and mail handling for Nevada companies.", link="/grow-my-business/#nevada-office"),
     ])
     preserve = "".join([
         svc("Asset protection planning", "Structure your holdings so one claim can't reach everything you own."),
-        svc("Living trusts", "Plan how your business and assets pass to the people you choose."),
-        svc("Name changes and dissolution", "Change your company, or close it down cleanly when the time comes."),
+        svc("Living trusts", "Plan how your business and assets pass to the people you choose.", link="/grow-my-business/living-trusts/"),
+        svc("Name changes and dissolution", "Change your company, or close it down cleanly when the time comes.", link="/start-a-business/filing-services/"),
     ])
     return page(
-        phero("Services", "One partner for the life of your business.",
+        phero("All services", "One partner for the life of your business.",
               "Start it right. Keep it protected. Grow it with a plan. Preserve what you've built.",
               X('<div class="jump"><a href="#start"><span>01</span>Start</a><a href="#protect"><span>02</span>Protect</a><a href="#grow"><span>03</span>Grow</a><a href="#preserve"><span>04</span>Preserve</a></div>'),
               "owner-workshop", "A business owner at work in his shop"),
@@ -251,9 +247,9 @@ def about():
               H("Part of a bigger community.", "h2", "h2"),
               T("<p>Laughlin's events and education bring business owners together to learn, ask questions and plan ahead.</p>", "lede"), cls=""),
             X("""<div class="eco">
-<a href="/#learn"><img src="lx:laughlin-planning" alt=""><div class="e-in"><small>Every month &middot; Online</small><strong>LAI Business Edge: Live Q&amp;A</strong><p>Bring your questions about structure, compliance and protection.</p></div></a>
-<a href="/#learn"><img src="lx:laughlin-summit" alt=""><div class="e-in"><small>Live event</small><strong>Magnify Your Wealth Summit</strong><p>Strategy for business owners and investors, in person.</p></div></a>
-<a href="/#learn"><img src="lx:couple-docs" alt=""><div class="e-in"><small>Free</small><strong>Guides and e-books</strong><p>LLC Quick Start Guide, compliance checklists and more.</p></div></a>
+<a href="/resources/events/"><img src="lx:laughlin-planning" alt=""><div class="e-in"><small>Every month &middot; Online</small><strong>LAI Business Edge: Live Q&amp;A</strong><p>Bring your questions about structure, compliance and protection.</p></div></a>
+<a href="/resources/events/"><img src="lx:laughlin-summit" alt=""><div class="e-in"><small>Live event</small><strong>Magnify Your Wealth Summit</strong><p>Strategy for business owners and investors, in person.</p></div></a>
+<a href="/resources/#guides"><img src="lx:couple-docs" alt=""><div class="e-in"><small>Free</small><strong>Guides and e-books</strong><p>LLC Quick Start Guide, compliance checklists and more.</p></div></a>
 </div>"""),
             cls="wrap"), cls="sec", tag="section"),
         band("Talk to a real person.", "Questions about your business? Our advisors give straight answers in plain English."),
@@ -269,25 +265,18 @@ def contact():
               "Questions about starting, protecting or changing your business? Call, or send a note and an advisor will get back to you."),
         C(C(
             C(X(f"""<div class="ways">
-<div class="way"><small>Call</small><div><a href="{TEL}">{PHONE}</a><p>Talk with an advisor. Se habla espa&ntilde;ol.</p></div></div>
-<div class="way"><small>Toll-free</small><div><a href="tel:+18006480966">(800) 648-0966</a><p>From anywhere in the U.S.</p></div></div>
-<div class="way"><small>Clients</small><div><b>Existing clients</b><p><a href="#clients" style="font-size:16px;border-bottom:1.5px solid var(--gold)">Renew, pay or schedule support &darr;</a></p></div></div>
+<div class="way"><small>Call</small><div><a href="{TEL}">{PHONE}</a><p>Talk with an advisor.</p></div></div>
+<div class="way"><small>Toll-free</small><div><a href="tel:+18006480966">1-800-648-0966</a><p>Se habla espa&ntilde;ol.</p></div></div>
+<div class="way"><small>Hours</small><div><b>Mon&ndash;Fri</b><p>8:00 a.m.&ndash;5:00 p.m. Pacific</p></div></div>
+<div class="way"><small>Office</small><div><b>Laughlin Associates, Inc.</b><p>680 W Nye Lane, Suite 202<br>Carson City, NV 89703<br>Fax 1-775-883-4874</p></div></div>
+<div class="way"><small>Clients</small><div><b>Existing clients</b><p><a href="/clients/" style="font-size:16px;border-bottom:1.5px solid var(--gold)">Renew, pay or schedule support &rarr;</a></p></div></div>
 </div>"""),
               T('<span class="eyebrow">What to expect</span>'),
               X("""<ol class="expect"><li><b>We listen</b>Tell us where your business is today.</li><li><b>We explain</b>Your options, in plain English.</li><li><b>You decide</b>No pressure. Just a clear next step.</li></ol>"""),
               cls="ct-side"),
             C(H("Send us a note", "h2", ""), T('<p class="note">Tell us a little about your business and an advisor will get back to you.</p>'), form, cls="form-card"),
             cls="wrap ct-grid"), cls="sec", tag="section"),
-        X(f"""<section class="sec cvps" id="clients"><div class="wrap">
-<span class="eyebrow">Existing clients</span>
-<h2 class="elementor-heading-title" style="font-family:var(--f-head);font-size:clamp(32px,3.8vw,50px);line-height:1.05;font-weight:700;letter-spacing:-.02em;color:var(--navy);margin:14px 0 0">Welcome back.</h2>
-<div class="cl-big">
-<a href="{TEL}"><b>Renew Registered Agent</b><span>Keep your agent service current.</span></a>
-<a href="{TEL}"><b>Renew CVPS</b><span>Another year of protection.</span></a>
-<a href="{TEL}"><b>Make a Payment</b><span>Pay an invoice or renewal.</span></a>
-<a href="#top"><b>Schedule Client Support</b><span>Book time with your advisor.</span></a>
-<a href="/#learn"><b>Client Resources</b><span>Guides, checklists and recordings.</span></a>
-</div></div></section>"""),
+        X('<iframe title="Map to Laughlin Associates" loading="lazy" style="display:block;width:100%;height:360px;border:0" src="https://maps.google.com/maps?q=680+W+Nye+Ln+Suite+202,+Carson+City,+NV+89703&amp;output=embed"></iframe>'),
     )
 
 

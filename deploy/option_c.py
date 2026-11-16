@@ -207,23 +207,27 @@ C_QUESTIONS = [
 ]
 
 
+STAGE_URL = {"Start": "/start-a-business/", "Protect": "/protect-my-business/", "Grow": "/grow-my-business/", "Preserve": "/grow-my-business/"}
+
+
 def build():
+    from sitekit import site_header, site_footer, KIT_CSS
     reset_ids("c")
     widths = [25, 50, 75, 100]
     life = "".join(
         f'<div class="phase" style="--w:{w}"><div class="n">0{i+1}</div><span class="when">{wh}</span><h3>{n}</h3><p>{d}</p>'
-        + "".join(f'<a href="#{n.lower()}">{x}</a>' for x in items) + "</div>"
+        + "".join(f'<a href="{STAGE_URL[n]}">{x}</a>' for x in items) + "</div>"
         for i, ((n, wh, d, items), w) in enumerate(zip(C_STAGES, widths)))
     qa = "".join(f'<details{" open" if i == 0 else ""}><summary>{q}</summary><p>{a}</p></details>' for i, (q, a) in enumerate(C_QUESTIONS))
     return [C(
-        style(FONTQ, CSS),
-        header("Start your business", SITE_LINKS),
+        style(FONTQ, CSS + KIT_CSS),
+        site_header(),
         # HERO
         C(C(
             C(T('<span class="eyebrow">Laughlin &middot; Since 1972</span>'),
               H("Formation is only the beginning. <em>We help you start it right, and keep it right.</em>", "h1", "h1"),
               T("<p>Entity formation, corporate veil protection and real advisors you can call. For business owners since 1972.</p>", "lede"),
-              C(B("Start your business", "#formation", "btn-gold"), B("Protect my business", "#protect", "btn-ghost"), cls="btns"),
+              C(B("Start your business", "/start-a-business/", "btn-gold"), B("Protect my business", "/protect-my-business/", "btn-ghost"), cls="btns"),
               X('<div class="creds"><span>Advisors, not a ticket queue</span><span>Nationwide</span><span>2026 Inc. 5000 Honoree</span></div>'),
               cls="hero-copy"),
             C(X('<div class="frame"></div><div class="panel"></div>'),
@@ -235,12 +239,12 @@ def build():
         X(f"""<section class="fronts">
 <div class="front f1" id="formation"><small id="start">Start a business</small><h2>Start your company the right way.</h2>
 <p>Choose the right structure and file in any state. We set it up to protect you from day one.</p>
-<ul><li><a href="#formation">Form an LLC</a></li><li><a href="#formation">Form a corporation</a></li><li><a href="#formation">Nonprofits</a></li><li><a href="#formation">Compare structures</a></li></ul>
-<a class="go" href="#formation">Start your business &rarr;</a></div>
+<ul><li><a href="/start-a-business/llc/">Form an LLC</a></li><li><a href="/start-a-business/corporation/">Form a corporation</a></li><li><a href="/start-a-business/nonprofit/">Nonprofits</a></li><li><a href="/start-a-business/compare-structures/">Compare structures</a></li></ul>
+<a class="go" href="/start-a-business/">Start your business &rarr;</a></div>
 <div class="front f2" id="protect"><small>Already own a business</small><h2>Keep your company protecting you.</h2>
 <p>Forming it was step one. Corporate Veil Protection handles the upkeep that keeps your personal assets separate.</p>
-<ul><li><a href="#cvps">Corporate Veil Protection</a></li><li><a href="#protect">Registered agent</a></li><li><a href="#protect">Minutes &amp; records</a></li><li><a href="#review">Free business review</a></li></ul>
-<a class="go" href="#cvps">Explore CVPS &rarr;</a></div>
+<ul><li><a href="/protect-my-business/corporate-veil-protection/">Corporate Veil Protection</a></li><li><a href="/protect-my-business/registered-agent/">Registered agent</a></li><li><a href="/protect-my-business/corporate-records/">Minutes &amp; records</a></li><li><a href="/business-review/">Free business review</a></li></ul>
+<a class="go" href="/protect-my-business/corporate-veil-protection/">Explore CVPS &rarr;</a></div>
 </section>"""),
         # WHY IT MATTERS
         C(C(
@@ -262,7 +266,7 @@ def build():
                 H("Start. Protect. Grow. Preserve.", "h2", "h2"), cls=""),
               T("<p>One relationship for the life of your business. Most formation companies stop after step one. We don't.</p>", "lede"),
               cls="life-head"),
-            X(f'<div class="life">{life}</div><p class="life-foot">Not sure where you are?<a href="#review">Get a free business review &rarr;</a></p>'),
+            X(f'<div class="life">{life}</div><p class="life-foot">Not sure where you are?<a href="/business-review/">Get a free business review &rarr;</a></p>'),
             cls="wrap"), cls="sec", tag="section"),
         # CVPS
         C(C(
@@ -275,7 +279,7 @@ def build():
 <li><b>Records in order</b>Proof your company stands on its own.</li>
 <li><b>Reviewed every year</b>An advisor checks it still fits.</li>
 </ol>"""),
-              C(B("Explore Corporate Veil Protection", "#cvps"), B("Get a free business review", "#review", "btn-link"), cls="btns"),
+              C(B("Explore Corporate Veil Protection", "/protect-my-business/corporate-veil-protection/"), B("Get a free business review", "/business-review/", "btn-link"), cls="btns"),
               cls="cv-copy"),
             X(f'<div class="diagram">{DIAGRAM}</div>'),
             cls="wrap cv-grid"), cls="sec cvps", tag="section"),
@@ -299,7 +303,7 @@ def build():
               H("Straight answers. Plain English.", "h2", "h2"),
               T("<p>The questions business owners ask us most. Free to read, no sign-up. Want to go deeper? Join a live Q&amp;A.</p>", "lede"),
               I("laughlin-planning", "ph", "A business owner working through a plan at a Laughlin session"),
-              C(B("Join a live Q&amp;A", "#learn", "btn-gold"), B("Free guides", "#learn", "btn-ghost-w"), cls="btns"),
+              C(B("Join a live Q&amp;A", "/resources/events/", "btn-gold"), B("Free guides", "/resources/#guides", "btn-ghost-w"), cls="btns"),
               cls="ans-side"),
             X(f'<div class="qa">{qa}</div>'),
             cls="wrap ans-grid"), cls="sec ans", tag="section"),
@@ -308,15 +312,15 @@ def build():
             C(T('<span class="eyebrow" id="advisors">Get started</span>'),
               H("Find your starting point.", "h2", "h2"), cls=""),
             X(f"""<div class="steps" id="review">
-<a class="st wide hl" href="#formation"><small>Ready now</small><strong>Start your business</strong><span>Pick a structure. File in any state.</span></a>
+<a class="st wide hl" href="/start-a-business/"><small>Ready now</small><strong>Start your business</strong><span>Pick a structure. File in any state.</span></a>
 <a class="st wide" href="{TEL}"><small>Talk it through</small><strong>Call an advisor &middot; {PHONE}</strong><span>Straight answers. No pressure.</span></a>
-<a class="st" href="#cvps"><small>Protect</small><strong>Explore CVPS</strong><span>Keep your veil intact.</span></a>
-<a class="st" href="#review"><small>Assess</small><strong>Free business review</strong><span>See where you stand.</span></a>
-<a class="st" href="#learn"><small>Learn</small><strong>Live Q&amp;A webinar</strong><span>Bring your questions. Free.</span></a>
+<a class="st" href="/protect-my-business/corporate-veil-protection/"><small>Protect</small><strong>Explore CVPS</strong><span>Keep your veil intact.</span></a>
+<a class="st" href="/business-review/"><small>Assess</small><strong>Free business review</strong><span>See where you stand.</span></a>
+<a class="st" href="/resources/events/"><small>Learn</small><strong>Live Q&amp;A webinar</strong><span>Bring your questions. Free.</span></a>
 </div>"""),
             cls="wrap"), cls="sec", tag="section"),
         # CLIENTS
         X(f"""<section class="clients" id="clients"><div class="wrap cl"><h2>{MARK} Existing clients</h2>
-<nav><a href="#clients">Renew Registered Agent</a><a href="#clients">Renew CVPS</a><a href="#clients">Make a Payment</a><a href="#clients">Schedule Client Support</a><a href="#clients">Client Resources</a></nav></div></section>"""),
-        footer(SITE_LINKS),
+<nav><a href="/clients/">Renew Registered Agent</a><a href="/clients/">Renew CVPS</a><a href="/clients/">Make a Payment</a><a href="/clients/">Schedule Client Support</a><a href="/clients/">Client Resources</a></nav></div></section>"""),
+        site_footer(),
         cls="lx lx-c")]

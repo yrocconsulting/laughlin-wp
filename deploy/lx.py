@@ -21,9 +21,11 @@ def _id():
     return hashlib.md5(f"{_prefix[0]}-{next(_counter)}".encode()).hexdigest()[:7]
 
 
-def C(*kids, cls="", tag=None, link=None):
+def C(*kids, cls="", tag=None, link=None, eid=None):
     """Container (full width; layout is handled by our stylesheet)."""
     s = {"content_width": "full", "css_classes": cls}
+    if eid:
+        s["_element_id"] = eid
     if tag:
         s["html_tag"] = tag
     if link:
@@ -156,31 +158,46 @@ NAV = [("Start a Business", "#start"), ("Protect My Business", "#protect"),
        ("Grow My Business", "#grow"), ("Resources &amp; Events", "#learn"), ("About", "#story")]
 
 
-def header(cta="Start your entity"):
-    links = "".join(f'<a href="{u}">{t}</a>' for t, u in NAV)
+SITE_NAV = [("Start a Business", "/services/#start"), ("Protect My Business", "/services/#protect"),
+            ("Grow My Business", "/services/#grow"), ("Resources &amp; Events", "/#learn"), ("About", "/about-us/")]
+
+# Link targets used by the shared header/footer. The option pages keep in-page anchors;
+# the live site pages pass SITE_LINKS so every link goes to a real page.
+ANCHOR_LINKS = {"nav": NAV, "home": "#top", "start": "#formation", "protect": "#protect", "cvps": "#protect",
+                "learn": "#learn", "clients": "#clients", "talk": "#advisors"}
+SITE_LINKS = {"nav": SITE_NAV, "home": "/", "start": "/services/#start", "protect": "/services/#protect",
+              "cvps": "/services/#cvps", "learn": "/#learn", "clients": "/contact/#clients", "talk": "/contact/"}
+
+
+def header(cta="Start your entity", links=ANCHOR_LINKS):
+    L = links
+    nav = "".join(f'<a href="{u}">{t}</a>' for t, u in L["nav"])
     return X(f"""<header class="hdr">
 <div class="util"><div class="wrap in">
-<nav class="acct" aria-label="Existing clients"><span class="lbl">Existing clients:</span><a href="#clients">Renew services</a><a href="#clients">Make a payment</a><a href="#clients">Client support</a></nav>
-<nav aria-label="Contact"><a class="talk" href="#advisors">Talk with an advisor</a><a class="tel" href="{TEL}">{PHONE}</a></nav>
+<nav class="acct" aria-label="Existing clients"><span class="lbl">Existing clients:</span><a href="{L['clients']}">Renew services</a><a href="{L['clients']}">Make a payment</a><a href="{L['clients']}">Client support</a></nav>
+<nav aria-label="Contact"><a class="talk" href="{L['talk']}">Talk with an advisor</a><a class="tel" href="{TEL}">{PHONE}</a></nav>
 </div></div>
 <div class="wrap main">
-<a class="logo" href="#top" aria-label="Laughlin home"><img src="{LOGO}" alt="Laughlin"></a>
+<a class="logo" href="{L['home']}" aria-label="Laughlin home"><img src="{LOGO}" alt="Laughlin"></a>
 <input type="checkbox" id="lxnav"><label class="burger" for="lxnav" aria-label="Menu"><span></span><span></span><span></span></label>
-<nav class="nav" aria-label="Main">{links}<a class="m-only" href="#clients">Existing clients: renew &amp; pay</a><a class="cta" href="#formation">{cta}</a></nav>
+<nav class="nav" aria-label="Main">{nav}<a class="m-only" href="{L['clients']}">Existing clients: renew &amp; pay</a><a class="cta" href="{L['start']}">{cta}</a></nav>
 </div>
 </header>""", cls="hdr-w")
 
 
-def footer():
+def footer(links=ANCHOR_LINKS):
+    L = links
+    site = links is SITE_LINKS
+    about = '<li><a href="/about-us/">About Laughlin</a></li><li><a href="/case-studies/">Client Stories</a></li><li><a href="/contact/">Contact</a></li>' if site else ""
     return X(f"""<footer class="ftr">
 <div class="wrap in">
 <div><span class="logo-w"><img src="{LOGO}" alt="Laughlin"></span>
 <p>Helping business owners start, protect, grow and preserve what they build. Since 1972.</p>
 <p><a href="{TEL}"><strong>{PHONE}</strong></a></p></div>
-<div><h4>Start</h4><ul><li><a href="#formation">Form an LLC</a></li><li><a href="#formation">Form a Corporation</a></li><li><a href="#formation">Compare Entities</a></li><li><a href="#formation">Nonprofits</a></li></ul></div>
-<div><h4>Protect</h4><ul><li><a href="#protect">Corporate Veil Protection</a></li><li><a href="#protect">Registered Agent</a></li><li><a href="#protect">Corporate Minutes</a></li><li><a href="#protect">Compliance</a></li></ul></div>
-<div><h4>Learn</h4><ul><li><a href="#learn">Webinars &amp; Events</a></li><li><a href="#learn">Guides &amp; E-books</a></li><li><a href="#learn">Live Q&amp;A</a></li><li><a href="#learn">Videos</a></li></ul></div>
-<div><h4>Clients</h4><ul><li><a href="#clients">Renew Registered Agent</a></li><li><a href="#clients">Renew CVPS</a></li><li><a href="#clients">Make a Payment</a></li><li><a href="#clients">Client Support</a></li></ul></div>
+<div><h4>Start</h4><ul><li><a href="{L['start']}">Form an LLC</a></li><li><a href="{L['start']}">Form a Corporation</a></li><li><a href="{L['start']}">Compare Structures</a></li><li><a href="{L['start']}">Nonprofits</a></li></ul></div>
+<div><h4>Protect</h4><ul><li><a href="{L['cvps']}">Corporate Veil Protection</a></li><li><a href="{L['protect']}">Registered Agent</a></li><li><a href="{L['protect']}">Corporate Minutes</a></li><li><a href="{L['protect']}">Compliance</a></li></ul></div>
+<div><h4>Learn</h4><ul><li><a href="{L['learn']}">Webinars &amp; Events</a></li><li><a href="{L['learn']}">Guides &amp; E-books</a></li><li><a href="{L['learn']}">Live Q&amp;A</a></li>{about}</ul></div>
+<div><h4>Clients</h4><ul><li><a href="{L['clients']}">Renew Registered Agent</a></li><li><a href="{L['clients']}">Renew CVPS</a></li><li><a href="{L['clients']}">Make a Payment</a></li><li><a href="{L['clients']}">Client Support</a></li></ul></div>
 </div>
 <div class="wrap base"><span>&copy; 2026 Laughlin Associates, Inc. Serving business owners nationwide since 1972.</span><span>Design preview &mdash; photography is temporary.</span></div>
 </footer>""", cls="ftr-w")

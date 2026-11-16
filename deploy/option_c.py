@@ -217,7 +217,7 @@ def build():
     qa = "".join(f'<details{" open" if i == 0 else ""}><summary>{q}</summary><p>{a}</p></details>' for i, (q, a) in enumerate(C_QUESTIONS))
     return [C(
         style(FONTQ, CSS),
-        header("Start your business"),
+        header("Start your business", SITE_LINKS),
         # HERO
         C(C(
             C(T('<span class="eyebrow">Laughlin &middot; Since 1972</span>'),
@@ -318,5 +318,5 @@ def build():
         # CLIENTS
         X(f"""<section class="clients" id="clients"><div class="wrap cl"><h2>{MARK} Existing clients</h2>
 <nav><a href="#clients">Renew Registered Agent</a><a href="#clients">Renew CVPS</a><a href="#clients">Make a Payment</a><a href="#clients">Schedule Client Support</a><a href="#clients">Client Resources</a></nav></div></section>"""),
-        footer(),
+        footer(SITE_LINKS),
         cls="lx lx-c")]

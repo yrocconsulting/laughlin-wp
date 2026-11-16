@@ -11,13 +11,16 @@ def r(e):
     if e["elType"] == "container":
         tag = s.get("html_tag") or "div"
         kids = "".join(r(k) for k in e["elements"])
-        return f'<{tag} class="elementor-element e-flex e-con-full e-con e-parent {s.get("css_classes","")}">{kids}</{tag}>'
+        eid = f' id="{s["_element_id"]}"' if s.get("_element_id") else ""
+        return f'<{tag}{eid} class="elementor-element e-flex e-con-full e-con e-parent {s.get("css_classes","")}">{kids}</{tag}>'
     w, c = e["widgetType"], s.get("_css_classes", "")
     if w == "heading": inner = f'<{s["header_size"]} class="elementor-heading-title elementor-size-default">{s["title"]}</{s["header_size"]}>'
     elif w == "text-editor": inner = s["editor"]
     elif w == "button": inner = f'<div class="elementor-button-wrapper"><a class="elementor-button elementor-button-link elementor-size-sm" href="{s["link"]["url"]}"><span class="elementor-button-content-wrapper"><span class="elementor-button-text">{s["text"]}</span></span></a></div>'
     elif w == "image": inner = f'<img src="{res(s["image"]["url"])}" alt="{s["image"]["alt"]}">'
     elif w == "html": inner = res(s["html"])
+    elif w == "metform": inner = '<form>' + "".join(f'<p><label>{l}</label><input placeholder="{l}"></p>' for l in ["First name", "Last name", "Email", "Phone"]) + '<p><label>Message</label><textarea rows="4"></textarea></p><button type="submit" class="metform-btn">Submit</button></form>'
+    else: inner = f"[{w}]"
     return f'<div class="elementor-element elementor-widget elementor-widget-{w} {c}"><div class="elementor-widget-container">{inner}</div></div>'
 
 for f in sorted(os.listdir(os.path.join(here, "pages"))):

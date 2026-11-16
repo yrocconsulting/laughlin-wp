@@ -76,6 +76,23 @@ CSS = """
 .lx-c .how li{counter-increment:h;font-size:16px;padding-top:12px;border-top:2px solid var(--navy)}
 .lx-c .how li b{display:block;font-family:var(--f-head);color:var(--navy);font-size:16px;margin-bottom:2px}
 .lx-c .how li b:before{content:counter(h) ". ";color:var(--gold-ink)}
+/* why it matters */
+.lx-c .quiet{background:var(--paper);border-bottom:1px solid var(--line)}
+.lx-c .q-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:start}
+.lx-c .q-copy{gap:24px}
+.lx-c .pairs{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--line)}
+.lx-c .pairs li{font-family:var(--f-head);font-weight:700;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.015em;color:var(--navy);padding:16px 0;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center}
+.lx-c .pairs li:before{content:"";flex:0 0 5px;height:24px;background:var(--gold);transform:skewY(-12deg)}
+.lx-c .rows{display:flex;flex-direction:column}
+.lx-c .rowi{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line)}
+.lx-c .rowi:last-child{border-bottom:1px solid var(--line)}
+.lx-c .rowi small{font-family:var(--f-head);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);padding-top:6px}
+.lx-c .rowi h3{font-family:var(--f-head);font-size:22px;font-weight:700;color:var(--navy);margin:0 0 6px;letter-spacing:-.01em}
+.lx-c .rowi p{margin:0;color:var(--muted);font-size:17px}
+.lx-c .life-foot{margin-top:40px;font-family:var(--f-head);font-weight:600;font-size:16px;color:var(--muted)}
+.lx-c .life-foot a{color:var(--navy);text-decoration:none;border-bottom:1.5px solid var(--gold);margin-left:6px}
+@media (max-width:1100px){.lx-c .q-grid{grid-template-columns:1fr;gap:48px}}
+@media (max-width:640px){.lx-c .rowi{grid-template-columns:1fr;gap:6px}}
 /* heritage */
 .lx-c .her{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
 .lx-c .her-copy{gap:24px}
@@ -167,60 +184,96 @@ DIAGRAM = """<svg viewBox="0 0 520 250" role="img" aria-label="The corporate vei
 <div class="cap"><div><h4>When it's maintained</h4>Business claims stop at the company. Your personal assets stay out of reach.</div><div class="bad"><h4>When it's neglected</h4>Missed filings, no minutes or mixed finances can let a court &ldquo;pierce the veil.&rdquo;</div></div>"""
 
 
+C_STAGES = [
+    ("Start", "Day one", "Pick the right structure. File it correctly.", ["LLC &amp; corporation formation", "Compare structures", "EIN &amp; setup"]),
+    ("Protect", "Every year", "Stay compliant. Keep your veil intact.", ["Corporate Veil Protection", "Registered agent", "Minutes &amp; records"]),
+    ("Grow", "As you scale", "Build credit, strategy and structure.", ["Business credit", "Strategy sessions", "Live Q&amp;A webinars"]),
+    ("Preserve", "What comes next", "Protect your assets. Plan the hand-off.", ["Asset protection", "Living trusts", "Succession planning"]),
+]
+
+C_QUESTIONS = [
+    ("What happens after I form an LLC?",
+     "You keep it in good standing. That means a registered agent, annual state filings, records of big decisions and business money kept separate from yours."),
+    ("Is my LLC actually protecting me?",
+     "Only if it's run like a separate business. Courts look at your records, your filings and whether business and personal money stay apart."),
+    ("What can weaken corporate protection?",
+     "Missed filings. A lapsed registered agent. No minutes. Mixed bank accounts. Contracts signed in your own name."),
+    ("Do I need corporate minutes?",
+     "Corporations generally must keep them. LLCs benefit from them. Minutes are proof your company makes its own decisions."),
+    ("What does a registered agent do?",
+     "Receives legal and state notices for your company at a reliable address, so nothing important gets missed."),
+    ("Does my structure still make sense?",
+     "Revenue, partners and goals change. Your structure may need to change too. A yearly review catches it early."),
+]
+
+
 def build():
     reset_ids("c")
-    whens = ["Day one", "Every year", "As you scale", "What comes next"]
     widths = [25, 50, 75, 100]
     life = "".join(
         f'<div class="phase" style="--w:{w}"><div class="n">0{i+1}</div><span class="when">{wh}</span><h3>{n}</h3><p>{d}</p>'
         + "".join(f'<a href="#{n.lower()}">{x}</a>' for x in items) + "</div>"
-        for i, ((n, d, items), wh, w) in enumerate(zip(STAGES, whens, widths)))
-    qa = "".join(f'<details{" open" if i == 0 else ""}><summary>{q}</summary><p>{a}</p></details>' for i, (q, a) in enumerate(QUESTIONS))
+        for i, ((n, wh, d, items), w) in enumerate(zip(C_STAGES, widths)))
+    qa = "".join(f'<details{" open" if i == 0 else ""}><summary>{q}</summary><p>{a}</p></details>' for i, (q, a) in enumerate(C_QUESTIONS))
     return [C(
         style(FONTQ, CSS),
-        header("Start your entity"),
+        header("Start your business"),
         # HERO
         C(C(
-            C(T(f'<span class="eyebrow">Laughlin &middot; Since 1972</span>'),
-              H("Formation is only the beginning. <em>We open the door, then stay with you for everything that comes after.</em>", "h1", "h1"),
-              T("<p>For more than 50 years, Laughlin has helped business owners start the right entity, protect what they've built, grow with confidence and plan for what's next.</p>", "lede"),
-              C(B("Start your entity", "#formation", "btn-gold"), B("Protect a business I own", "#protect", "btn-ghost"), cls="btns"),
-              X('<div class="creds"><span>Real advisors you can call</span><span>Nationwide</span><span>2026 Inc. 5000 Honoree</span></div>'),
+            C(T('<span class="eyebrow">Laughlin &middot; Since 1972</span>'),
+              H("Formation is only the beginning. <em>We help you start it right, and keep it right.</em>", "h1", "h1"),
+              T("<p>Entity formation, corporate veil protection and real advisors you can call. For business owners since 1972.</p>", "lede"),
+              C(B("Start your business", "#formation", "btn-gold"), B("Protect my business", "#protect", "btn-ghost"), cls="btns"),
+              X('<div class="creds"><span>Advisors, not a ticket queue</span><span>Nationwide</span><span>2026 Inc. 5000 Honoree</span></div>'),
               cls="hero-copy"),
             C(X('<div class="frame"></div><div class="panel"></div>'),
               I("owner-cafe", "photo", "A business owner standing in the doorway of her shop"),
-              X(f'<div class="tag"><b>Talk to a real person</b>Questions about your business? <a href="{TEL}"><strong>{PHONE}</strong></a></div>'),
+              X(f'<div class="tag"><b>Talk to a person</b>Straight answers about your business. <a href="{TEL}"><strong>{PHONE}</strong></a></div>'),
               cls="doorway"),
             cls="wrap hero-grid"), cls="hero", tag="section"),
         # TWO FRONT DOORS
         X(f"""<section class="fronts">
-<div class="front f1" id="formation"><small id="start">Starting a business</small><h2>Form your LLC or corporation, with people who've done it since 1972.</h2>
-<p>File in any state. We'll help you choose the right structure and set it up so it protects you from day one.</p>
-<ul><li><a href="#formation">Form an LLC</a></li><li><a href="#formation">Form a corporation</a></li><li><a href="#formation">Nonprofits</a></li><li><a href="#formation">Compare entity types</a></li></ul>
-<a class="go" href="#formation">Start your entity &rarr;</a></div>
-<div class="front f2" id="protect"><small>Already own a business</small><h2>Keep your company protecting you, year after year.</h2>
-<p>Our Corporate Veil Protection Service handles the upkeep formation-only companies leave to you.</p>
+<div class="front f1" id="formation"><small id="start">Start a business</small><h2>Start your company the right way.</h2>
+<p>Choose the right structure and file in any state. We set it up to protect you from day one.</p>
+<ul><li><a href="#formation">Form an LLC</a></li><li><a href="#formation">Form a corporation</a></li><li><a href="#formation">Nonprofits</a></li><li><a href="#formation">Compare structures</a></li></ul>
+<a class="go" href="#formation">Start your business &rarr;</a></div>
+<div class="front f2" id="protect"><small>Already own a business</small><h2>Keep your company protecting you.</h2>
+<p>Forming it was step one. Corporate Veil Protection handles the upkeep that keeps your personal assets separate.</p>
 <ul><li><a href="#cvps">Corporate Veil Protection</a></li><li><a href="#protect">Registered agent</a></li><li><a href="#protect">Minutes &amp; records</a></li><li><a href="#review">Free business review</a></li></ul>
 <a class="go" href="#cvps">Explore CVPS &rarr;</a></div>
 </section>"""),
+        # WHY IT MATTERS
+        C(C(
+            C(T('<span class="eyebrow">Why it matters</span>'),
+              H("Expensive mistakes rarely happen on day one. They happen in year three.", "h2", "h2"),
+              T("<p>A missed filing. No minutes. One shared bank account. Small gaps that can leave your personal assets exposed.</p>", "lede"),
+              X('<ul class="pairs"><li>Clarity before you file.</li><li>Upkeep after you file.</li><li>A real person when you need one.</li></ul>'),
+              cls="q-copy"),
+            X("""<div class="rows">
+<div class="rowi"><small>Structure</small><div><h3>The right entity from the start</h3><p>We help you choose based on your goals, so nothing has to be undone later.</p></div></div>
+<div class="rowi"><small>Upkeep</small><div><h3>Deadlines handled, not remembered</h3><p>Filings, renewals and registered agent service, tracked for you every year.</p></div></div>
+<div class="rowi"><small>Protection</small><div><h3>A veil that holds</h3><p>Minutes, records and a yearly review that keep your company separate from you.</p></div></div>
+<div class="rowi"><small>People</small><div><h3>Advisors, not a ticket queue</h3><p>Call and talk to someone who knows business structure. Since 1972.</p></div></div>
+</div>"""),
+            cls="wrap q-grid"), cls="sec quiet", tag="section"),
         # LIFETIME
         C(C(
             C(C(T('<span class="eyebrow" id="grow">The Laughlin way</span>'),
                 H("Start. Protect. Grow. Preserve.", "h2", "h2"), cls=""),
-              T("<p>A business isn't a single filing. It's decades of decisions. Laughlin is built to be there through all of them, not just the first day.</p>", "lede"),
+              T("<p>One relationship for the life of your business. Most formation companies stop after step one. We don't.</p>", "lede"),
               cls="life-head"),
-            X(f'<div class="life">{life}</div>'),
+            X(f'<div class="life">{life}</div><p class="life-foot">Not sure where you are?<a href="#review">Get a free business review &rarr;</a></p>'),
             cls="wrap"), cls="sec", tag="section"),
         # CVPS
         C(C(
             C(T('<span class="eyebrow" id="cvps">Corporate Veil Protection Service</span>'),
-              H("What is the corporate veil, and why should you care?", "h2", "h2"),
-              T("<p>When you form an LLC or corporation, the law treats it as separate from you. That separation, the <em>corporate veil</em>, is what keeps business debts and lawsuits away from your personal assets.</p><p>But the veil only holds if the company is run like a separate business. That's where most owners fall behind, and where Laughlin helps.</p>", "lede"),
+              H("Your company protects you. Only if it's maintained.", "h2", "h2"),
+              T("<p>An LLC or corporation draws a legal line between your business and your personal life. It's called the <em>corporate veil</em>.</p><p>Run the company as its own business and the line holds. Let the upkeep slip and a court can step over it, to your home and savings.</p>", "lede"),
               X("""<ol class="how">
-<li><b>We track your deadlines</b>Annual filings and renewals, so nothing lapses.</li>
-<li><b>We help with minutes</b>Meetings and resolutions documented properly.</li>
-<li><b>We keep records in order</b>The proof your company is truly separate.</li>
-<li><b>We review with you yearly</b>A real advisor checks your structure still fits.</li>
+<li><b>Deadlines tracked</b>Filings and renewals, on time.</li>
+<li><b>Minutes prepared</b>Decisions documented properly.</li>
+<li><b>Records in order</b>Proof your company stands on its own.</li>
+<li><b>Reviewed every year</b>An advisor checks it still fits.</li>
 </ol>"""),
               C(B("Explore Corporate Veil Protection", "#cvps"), B("Get a free business review", "#review", "btn-link"), cls="btns"),
               cls="cv-copy"),
@@ -229,8 +282,8 @@ def build():
         # HERITAGE
         C(C(
             C(X(f'<div class="big71" id="story">1972 {MARK}</div>'),
-              H("Five decades of business owners, not just filings.", "h2", "h2"),
-              T("<p>Harley Laughlin was an independent truck driver who believed small businesses deserved the same protections big companies take for granted. He started Laughlin in 1972 to provide them.</p><p>Since then we've helped thousands of owners across the country. We've seen the mistakes that cost the most, and we've built our services around preventing them.</p>", "lede"),
+              H("Built by a business owner. For business owners.", "h2", "h2"),
+              T("<p>Harley Laughlin was an independent truck driver. He believed small businesses deserved the same protections as big ones, and started Laughlin in 1972 to provide them.</p><p>Five decades and thousands of businesses later, the job hasn't changed. We've seen which mistakes cost the most. Our services exist to prevent them.</p>", "lede"),
               X("""<div class="facts"><div><b>Thousands</b><span>of businesses supported</span></div><div><b>Nationwide</b><span>service in every state</span></div><div><b>Inc. 5000</b><span>2026 honoree</span></div></div>
 <p class="quote">&ldquo;My business has been steered in the right direction and I have a proper understanding of my responsibilities to maintain my liability protection.&rdquo;<cite>Dan Lincoln, Bud the Spud Chip Trucks, Inc.</cite></p>"""),
               cls="her-copy"),
@@ -242,9 +295,9 @@ def build():
             cls="wrap her"), cls="sec", tag="section"),
         # ANSWERS
         C(C(
-            C(T('<span class="eyebrow" id="learn">Straight answers</span>'),
-              H("What business owners ask us every day.", "h2", "h2"),
-              T("<p>Education has been part of Laughlin for decades. Here are plain-English answers. Want to go deeper? Join a live Q&amp;A.</p>", "lede"),
+            C(T('<span class="eyebrow" id="learn">Learn before you file</span>'),
+              H("Straight answers. Plain English.", "h2", "h2"),
+              T("<p>The questions business owners ask us most. Free to read, no sign-up. Want to go deeper? Join a live Q&amp;A.</p>", "lede"),
               I("laughlin-planning", "ph", "A business owner working through a plan at a Laughlin session"),
               C(B("Join a live Q&amp;A", "#learn", "btn-gold"), B("Free guides", "#learn", "btn-ghost-w"), cls="btns"),
               cls="ans-side"),
@@ -252,14 +305,14 @@ def build():
             cls="wrap ans-grid"), cls="sec ans", tag="section"),
         # NEXT STEPS
         C(C(
-            C(T('<span class="eyebrow" id="advisors">Your next step</span>'),
-              H("Ready to talk, or just getting started? Choose your next step.", "h2", "h2"), cls=""),
+            C(T('<span class="eyebrow" id="advisors">Get started</span>'),
+              H("Find your starting point.", "h2", "h2"), cls=""),
             X(f"""<div class="steps" id="review">
-<a class="st wide hl" href="#formation"><small>Ready now</small><strong>Start your LLC or corporation</strong><span>Form in any state, set up right.</span></a>
-<a class="st wide" href="{TEL}"><small>Talk it through</small><strong>Speak with an advisor &middot; {PHONE}</strong><span>No pressure, just answers.</span></a>
+<a class="st wide hl" href="#formation"><small>Ready now</small><strong>Start your business</strong><span>Pick a structure. File in any state.</span></a>
+<a class="st wide" href="{TEL}"><small>Talk it through</small><strong>Call an advisor &middot; {PHONE}</strong><span>Straight answers. No pressure.</span></a>
 <a class="st" href="#cvps"><small>Protect</small><strong>Explore CVPS</strong><span>Keep your veil intact.</span></a>
-<a class="st" href="#review"><small>Assess</small><strong>Free business review</strong><span>Is your structure still right?</span></a>
-<a class="st" href="#learn"><small>Learn</small><strong>Attend a webinar</strong><span>Live and free, every month.</span></a>
+<a class="st" href="#review"><small>Assess</small><strong>Free business review</strong><span>See where you stand.</span></a>
+<a class="st" href="#learn"><small>Learn</small><strong>Live Q&amp;A webinar</strong><span>Bring your questions. Free.</span></a>
 </div>"""),
             cls="wrap"), cls="sec", tag="section"),
         # CLIENTS

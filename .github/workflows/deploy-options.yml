@@ -70,7 +70,8 @@ jobs:
           W="wp --path=$WP_PATH --skip-plugins --skip-themes"
           V=$(ssh site "$W plugin get elementor --field=version")
           declare -A IDS
-          while read -r name; do
+          # Read the page list on fd 3 so ssh calls inside the loop cannot consume it.
+          while read -r name <&3; do
             [ -n "$name" ] || continue
             f="deploy/pages/$name.json"
             path=$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['path'])" "$f")
@@ -93,7 +94,7 @@ jobs:
             ssh site "$W post meta update $id _elementor_edit_mode builder && $W post meta update $id _elementor_template_type wp-page && $W post meta update $id _elementor_version $V && $W post meta update $id _wp_page_template elementor_canvas" >/dev/null
             ssh site "wp --path=$WP_PATH post update $id --post_title='$title' --post_status=publish" >/dev/null
             echo "published /$path/ ($id)"
-          done < deploy/pages/order.txt
+          done 3< deploy/pages/order.txt
 
       - name: Set the site homepage
         if: hashFiles('deploy/homepage') != ''

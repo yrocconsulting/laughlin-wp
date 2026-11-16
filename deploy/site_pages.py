@@ -75,6 +75,7 @@ PAGE_CSS = """
 .lx-c .form-card p.note{font-size:15px;color:var(--muted);margin:0}
 .lx-c .form-card .elementor-widget-metform input:not([type=checkbox]):not([type=radio]),.lx-c .form-card .elementor-widget-metform textarea{width:100%;font-family:var(--f-body);font-size:17px;padding:14px 16px;border:1px solid var(--line);border-radius:0;background:#fff;color:var(--ink);box-shadow:none}
 .lx-c .form-card .elementor-widget-metform input:focus,.lx-c .form-card .elementor-widget-metform textarea:focus{outline:2px solid var(--navy);outline-offset:-1px;border-color:var(--navy)}
+.lx-c .form-card .elementor-widget-metform .e-con,.lx-c .form-card .elementor-widget-metform .elementor-element,.lx-c .form-card .elementor-widget-metform .elementor-column{width:100%!important;max-width:100%!important;flex:1 1 100%!important}
 .lx-c .form-card .elementor-widget-metform label{font-family:var(--f-head);font-weight:600;font-size:14px;color:var(--ink)}
 .lx-c .form-card .elementor-widget-metform button[type=submit],.lx-c .form-card .metform-btn{font-family:var(--f-head);font-weight:700;font-size:16px;background:var(--navy)!important;color:#fff!important;border:0!important;border-radius:0!important;padding:16px 28px!important}
 .lx-c .form-card .elementor-widget-metform button[type=submit]:hover{background:var(--navy-2)!important}

@@ -1,4 +1,7 @@
 ID,post_type,post_name,post_title,post_status
+1486,page,option-c,"Homepage Option C: The Open Door",publish
+1485,page,option-b,"Homepage Option B: Real Answers",publish
+1484,page,option-a,"Homepage Option A: The Long Road",publish
 9,elementor_library,default-kit,"Default Kit",publish
 3,page,privacy-policy,"Privacy Policy",draft
 2,page,sample-page,"Sample Page",publish

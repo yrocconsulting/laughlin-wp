@@ -85,6 +85,17 @@ jobs:
             echo "published $slug ($id): https://$SITE_DOMAIN/$slug/"
           done
 
+      - name: Set the site homepage
+        if: hashFiles('deploy/homepage') != ''
+        run: |
+          W="wp --path=$WP_PATH --skip-plugins --skip-themes"
+          slug=$(tr -d '[:space:]' < deploy/homepage)
+          id=$(ssh site "$W post list --post_type=page --name=$slug --post_status=publish --field=ID")
+          [ -n "$id" ] || { echo "No published page with slug $slug"; exit 1; }
+          echo "Previous: show_on_front=$(ssh site "$W option get show_on_front"), page_on_front=$(ssh site "$W option get page_on_front")"
+          ssh site "$W option update show_on_front page && $W option update page_on_front $id"
+          echo "Homepage is now $slug ($id)"
+
       - name: Regenerate Elementor CSS and clear cache
         run: |
           ssh site "wp --path=$WP_PATH elementor flush-css" || true
